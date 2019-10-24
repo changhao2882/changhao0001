@@ -1,0 +1,64 @@
+git add [文件名]添加
+
+git commit -m "注释" 提交
+
+git status 查看仓库状态
+
+git diff查看修改内容
+
+git log 可以显示从最近到最远的提交日志
+
+git log --pretty=oneline只显示提交编号和注释信息
+
+git reset --hard HEAD^   回退到上个版本
+
+git reset --hard HEAD^^  回退到上上个版本
+
+git reset --hard HEAD~100   回退到上100个版本
+
+git reset --hard 具体版本号(47920afb891a4c895b7874b50353e8d89046b325)  回退到具体版本
+
+git reflog 记录每一次命令
+
+git checkout – [文件名] 撤销操作
+
+git pull origin master 从远程仓库取到自己机器
+
+git push origin master 提交到远程仓库
+
+git clone 远程库地址
+
+rm -rf 目录名 删除当前目录
+
+touch 文件名 创建文件
+
+git add .  添加所有
+
+git commit . -m "注释" 提交所有
+
+git branch 分支名  创建分支
+
+git checkout 分支名  切换分支
+
+a:git checkout -b 分支名  创建与切换同时进行
+
+b:git push origin 分支名 创建并提交到远程分支（git push --set-upstream origin ch001）
+
+c:添加
+
+d:提交
+
+e:git push origin
+
+git branch 查看所有分支（当前分支前有一个*）
+
+git merge [当前分支名称]  当前分支上内容提交到master分支上（进入到master分支上，先,然后git push origin master）
+
+git push origin :分支名 删除远程分支
+git push origin --delete 分支名 删除远程分支
+
+git branch -D <BranchName>删除本地分支 
+
+git log --graph 查看分支合并图
+
+git checkout -b dev origin/dev 创建dev分支，并提交到远程仓库
