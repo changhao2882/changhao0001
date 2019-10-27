@@ -1,0 +1,561 @@
+Microsoft Windows [版本 10.0.17134.1006]
+(c) 2018 Microsoft Corporation。保留所有权利。
+
+C:\Users\67557>d:
+
+D:\>D:\mongodb\mongodb-win32-x86_64-2008plus-ssl-3.4.16-26-g315d49ee78\bin
+'D:\mongodb\mongodb-win32-x86_64-2008plus-ssl-3.4.16-26-g315d49ee78\bin' 不是内部或外部命令，也不是可运行的程序
+或批处理文件。
+
+D:\>cd D:\mongodb\mongodb-win32-x86_64-2008plus-ssl-3.4.16-26-g315d49ee78\bin
+
+D:\mongodb\mongodb-win32-x86_64-2008plus-ssl-3.4.16-26-g315d49ee78\bin>dir
+ 驱动器 D 中的卷是 Windows
+ 卷的序列号是 F44B-BC41
+
+ D:\mongodb\mongodb-win32-x86_64-2008plus-ssl-3.4.16-26-g315d49ee78\bin 的目录
+
+2019/09/25  20:15    <DIR>          .
+2019/09/25  20:15    <DIR>          ..
+2018/08/03  20:14         7,869,728 bsondump.exe
+2018/04/03  18:58         2,462,720 libeay32.dll
+2018/08/03  20:28        11,224,576 mongo.exe
+2018/08/03  20:28       112,594,944 mongo.pdb
+2018/08/03  20:33        27,156,992 mongod.exe
+2018/08/03  20:33       258,674,688 mongod.pdb
+2018/08/03  20:18         9,975,719 mongodump.exe
+2018/08/03  20:16         8,126,850 mongoexport.exe
+2018/08/03  20:15         8,043,335 mongofiles.exe
+2018/08/03  20:16         8,218,001 mongoimport.exe
+2018/08/03  20:19         7,872,053 mongooplog.exe
+2018/08/03  20:34        23,118,848 mongoperf.exe
+2018/08/03  20:34       233,902,080 mongoperf.pdb
+2018/08/03  20:17        11,066,365 mongorestore.exe
+2018/08/03  20:33        13,897,728 mongos.exe
+2018/08/03  20:33       133,263,360 mongos.pdb
+2018/08/03  20:14         8,205,904 mongostat.exe
+2018/08/03  20:18         8,009,804 mongotop.exe
+2018/04/03  18:58           357,888 ssleay32.dll
+              19 个文件    894,041,583 字节
+               2 个目录 35,049,852,928 可用字节
+
+D:\mongodb\mongodb-win32-x86_64-2008plus-ssl-3.4.16-26-g315d49ee78\bin>mongod.exe --dbpath=D:\box\data\db
+2019-09-27T04:44:30.827-0700 I CONTROL  [initandlisten] MongoDB starting : pid=49396 port=27017 dbpath=D:\box\data\db 64-bit host=LAPTOP-M8FQLCV8
+2019-09-27T04:44:30.827-0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2019-09-27T04:44:30.830-0700 I CONTROL  [initandlisten] db version v3.4.16-26-g315d49ee78
+2019-09-27T04:44:30.830-0700 I CONTROL  [initandlisten] git version: 315d49ee782036f72e9e502937583dcbbfd236f2
+2019-09-27T04:44:30.830-0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2o-fips  27 Mar 2018
+2019-09-27T04:44:30.831-0700 I CONTROL  [initandlisten] allocator: tcmalloc
+2019-09-27T04:44:30.831-0700 I CONTROL  [initandlisten] modules: none
+2019-09-27T04:44:30.831-0700 I CONTROL  [initandlisten] build environment:
+2019-09-27T04:44:30.831-0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
+2019-09-27T04:44:30.831-0700 I CONTROL  [initandlisten]     distarch: x86_64
+2019-09-27T04:44:30.831-0700 I CONTROL  [initandlisten]     target_arch: x86_64
+2019-09-27T04:44:30.831-0700 I CONTROL  [initandlisten] options: { storage: { dbPath: "D:\box\data\db" } }
+2019-09-27T04:44:30.833-0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=3540M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),verbose=(recovery_progress),
+2019-09-27T04:44:30.955-0700 I CONTROL  [initandlisten]
+2019-09-27T04:44:30.955-0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2019-09-27T04:44:30.956-0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2019-09-27T04:44:30.956-0700 I CONTROL  [initandlisten]
+2019-09-27T19:44:31.646+0800 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/box/data/db/diagnostic.data'
+2019-09-27T19:44:31.678+0800 I INDEX    [initandlisten] build index on: admin.system.version properties: { v: 2, key: { version: 1 }, name: "incompatible_with_version_32", ns: "admin.system.version" }
+2019-09-27T19:44:31.678+0800 I INDEX    [initandlisten]          building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+2019-09-27T19:44:31.690+0800 I INDEX    [initandlisten] build index done.  scanned 0 total records. 0 secs
+2019-09-27T19:44:31.694+0800 I COMMAND  [initandlisten] setting featureCompatibilityVersion to 3.4
+2019-09-27T19:44:31.695+0800 I NETWORK  [thread1] waiting for connections on port 27017
+2019-09-27T19:47:38.068+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:58025 #1 (1 connection now open)
+2019-09-27T19:47:38.070+0800 I NETWORK  [conn1] received client metadata from 127.0.0.1:58025 conn1: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.16-26-g315d49ee78" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2019-09-27T20:15:16.397+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:59488 #2 (2 connections now open)
+2019-09-27T20:15:16.403+0800 I NETWORK  [conn2] received client metadata from 127.0.0.1:59488 conn2: { driver: { name: "mongo-java-driver", version: "C_4.4.1-189-g33e62f7-dirty" }, os: { type: "Windows", name: "Windows 10", architecture: "amd64", version: "10.0" }, platform: "Java/Oracle Corporation/1.8.0_121-b13" }
+2019-09-27T20:15:16.427+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:59489 #3 (3 connections now open)
+2019-09-27T20:15:16.428+0800 I NETWORK  [conn3] received client metadata from 127.0.0.1:59489 conn3: { driver: { name: "mongo-java-driver", version: "C_4.4.1-189-g33e62f7-dirty" }, os: { type: "Windows", name: "Windows 10", architecture: "amd64", version: "10.0" }, platform: "Java/Oracle Corporation/1.8.0_121-b13" }
+2019-09-27T20:29:22.987+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:59663 #4 (4 connections now open)
+2019-09-27T20:29:22.988+0800 I NETWORK  [conn4] received client metadata from 127.0.0.1:59663 conn4: { driver: { name: "mongo-java-driver", version: "C_4.4.1-189-g33e62f7-dirty" }, os: { type: "Windows", name: "Windows 10", architecture: "amd64", version: "10.0" }, platform: "Java/Oracle Corporation/1.8.0_121-b13" }
+2019-09-27T20:40:51.994+0800 I COMMAND  [conn1] CMD: drop qq.class
+2019-09-27T22:43:33.085+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61466 #5 (5 connections now open)
+2019-09-27T22:43:33.087+0800 I NETWORK  [conn5] received client metadata from 127.0.0.1:61466 conn5: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T22:43:33.092+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61467 #6 (6 connections now open)
+2019-09-27T22:43:33.093+0800 I NETWORK  [conn6] received client metadata from 127.0.0.1:61467 conn6: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T22:43:33.156+0800 I -        [conn5] end connection 127.0.0.1:61466 (6 connections now open)
+2019-09-27T22:43:33.156+0800 I -        [conn6] end connection 127.0.0.1:61467 (6 connections now open)
+2019-09-27T22:45:41.254+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61490 #7 (5 connections now open)
+2019-09-27T22:45:41.255+0800 I NETWORK  [conn7] received client metadata from 127.0.0.1:61490 conn7: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T22:45:41.264+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61491 #8 (6 connections now open)
+2019-09-27T22:45:41.265+0800 I NETWORK  [conn8] received client metadata from 127.0.0.1:61491 conn8: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T22:45:41.266+0800 I -        [conn7] end connection 127.0.0.1:61490 (6 connections now open)
+2019-09-27T22:45:41.266+0800 I -        [conn8] end connection 127.0.0.1:61491 (6 connections now open)
+2019-09-27T22:48:29.454+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61542 #9 (5 connections now open)
+2019-09-27T22:48:29.456+0800 I NETWORK  [conn9] received client metadata from 127.0.0.1:61542 conn9: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T22:48:29.463+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61543 #10 (6 connections now open)
+2019-09-27T22:48:29.464+0800 I NETWORK  [conn10] received client metadata from 127.0.0.1:61543 conn10: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T22:48:29.466+0800 I -        [conn10] end connection 127.0.0.1:61543 (6 connections now open)
+2019-09-27T22:48:29.466+0800 I -        [conn9] end connection 127.0.0.1:61542 (6 connections now open)
+2019-09-27T22:51:52.381+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61636 #11 (5 connections now open)
+2019-09-27T22:51:52.382+0800 I NETWORK  [conn11] received client metadata from 127.0.0.1:61636 conn11: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T22:51:52.391+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61637 #12 (6 connections now open)
+2019-09-27T22:51:52.392+0800 I NETWORK  [conn12] received client metadata from 127.0.0.1:61637 conn12: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T22:51:52.393+0800 I -        [conn11] end connection 127.0.0.1:61636 (6 connections now open)
+2019-09-27T22:51:52.393+0800 I -        [conn12] end connection 127.0.0.1:61637 (6 connections now open)
+2019-09-27T22:52:35.441+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61646 #13 (5 connections now open)
+2019-09-27T22:52:35.442+0800 I NETWORK  [conn13] received client metadata from 127.0.0.1:61646 conn13: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T22:52:35.446+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61647 #14 (6 connections now open)
+2019-09-27T22:52:35.447+0800 I NETWORK  [conn14] received client metadata from 127.0.0.1:61647 conn14: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T22:52:35.449+0800 I -        [conn13] end connection 127.0.0.1:61646 (6 connections now open)
+2019-09-27T22:52:35.449+0800 I -        [conn14] end connection 127.0.0.1:61647 (6 connections now open)
+2019-09-27T22:55:25.921+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61680 #15 (5 connections now open)
+2019-09-27T22:55:25.922+0800 I NETWORK  [conn15] received client metadata from 127.0.0.1:61680 conn15: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T22:55:25.930+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61681 #16 (6 connections now open)
+2019-09-27T22:55:25.941+0800 I NETWORK  [conn16] received client metadata from 127.0.0.1:61681 conn16: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T22:55:25.942+0800 I -        [conn16] end connection 127.0.0.1:61681 (6 connections now open)
+2019-09-27T22:55:25.942+0800 I -        [conn15] end connection 127.0.0.1:61680 (6 connections now open)
+2019-09-27T22:55:38.252+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61682 #17 (5 connections now open)
+2019-09-27T22:55:38.253+0800 I NETWORK  [conn17] received client metadata from 127.0.0.1:61682 conn17: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T22:55:38.260+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61683 #18 (6 connections now open)
+2019-09-27T22:55:38.261+0800 I NETWORK  [conn18] received client metadata from 127.0.0.1:61683 conn18: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T22:55:38.262+0800 I -        [conn17] end connection 127.0.0.1:61682 (6 connections now open)
+2019-09-27T22:55:38.262+0800 I -        [conn18] end connection 127.0.0.1:61683 (6 connections now open)
+2019-09-27T22:56:53.847+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61697 #19 (5 connections now open)
+2019-09-27T22:56:53.848+0800 I NETWORK  [conn19] received client metadata from 127.0.0.1:61697 conn19: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T22:56:53.851+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61698 #20 (6 connections now open)
+2019-09-27T22:56:53.852+0800 I NETWORK  [conn20] received client metadata from 127.0.0.1:61698 conn20: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T22:56:53.854+0800 I -        [conn19] end connection 127.0.0.1:61697 (6 connections now open)
+2019-09-27T22:56:53.854+0800 I -        [conn20] end connection 127.0.0.1:61698 (6 connections now open)
+2019-09-27T22:58:08.110+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61715 #21 (5 connections now open)
+2019-09-27T22:58:08.111+0800 I NETWORK  [conn21] received client metadata from 127.0.0.1:61715 conn21: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T22:58:08.117+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61716 #22 (6 connections now open)
+2019-09-27T22:58:08.118+0800 I NETWORK  [conn22] received client metadata from 127.0.0.1:61716 conn22: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T22:58:08.615+0800 I -        [conn22] end connection 127.0.0.1:61716 (6 connections now open)
+2019-09-27T22:58:08.616+0800 I -        [conn21] end connection 127.0.0.1:61715 (6 connections now open)
+2019-09-27T22:58:35.999+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61720 #23 (5 connections now open)
+2019-09-27T22:58:36.000+0800 I NETWORK  [conn23] received client metadata from 127.0.0.1:61720 conn23: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T22:58:36.009+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61721 #24 (6 connections now open)
+2019-09-27T22:58:36.011+0800 I NETWORK  [conn24] received client metadata from 127.0.0.1:61721 conn24: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T22:58:36.012+0800 I -        [conn24] end connection 127.0.0.1:61721 (6 connections now open)
+2019-09-27T22:58:36.012+0800 I -        [conn23] end connection 127.0.0.1:61720 (6 connections now open)
+2019-09-27T22:59:24.392+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61732 #25 (5 connections now open)
+2019-09-27T22:59:24.394+0800 I NETWORK  [conn25] received client metadata from 127.0.0.1:61732 conn25: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T22:59:24.886+0800 I -        [conn25] end connection 127.0.0.1:61732 (5 connections now open)
+2019-09-27T22:59:59.114+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61736 #26 (5 connections now open)
+2019-09-27T22:59:59.115+0800 I NETWORK  [conn26] received client metadata from 127.0.0.1:61736 conn26: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T22:59:59.606+0800 I -        [conn26] end connection 127.0.0.1:61736 (5 connections now open)
+2019-09-27T23:00:05.377+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61738 #27 (5 connections now open)
+2019-09-27T23:00:05.378+0800 I NETWORK  [conn27] received client metadata from 127.0.0.1:61738 conn27: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:00:05.384+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61739 #28 (6 connections now open)
+2019-09-27T23:00:05.386+0800 I NETWORK  [conn28] received client metadata from 127.0.0.1:61739 conn28: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:00:05.387+0800 I -        [conn27] end connection 127.0.0.1:61738 (6 connections now open)
+2019-09-27T23:00:05.387+0800 I -        [conn28] end connection 127.0.0.1:61739 (6 connections now open)
+2019-09-27T23:02:01.545+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61808 #29 (5 connections now open)
+2019-09-27T23:02:01.547+0800 I NETWORK  [conn29] received client metadata from 127.0.0.1:61808 conn29: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:02:02.036+0800 I -        [conn29] end connection 127.0.0.1:61808 (5 connections now open)
+2019-09-27T23:02:09.096+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61811 #30 (5 connections now open)
+2019-09-27T23:02:09.097+0800 I NETWORK  [conn30] received client metadata from 127.0.0.1:61811 conn30: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:02:09.602+0800 I -        [conn30] end connection 127.0.0.1:61811 (5 connections now open)
+2019-09-27T23:05:17.242+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61838 #31 (5 connections now open)
+2019-09-27T23:05:17.243+0800 I NETWORK  [conn31] received client metadata from 127.0.0.1:61838 conn31: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:05:17.246+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61839 #32 (6 connections now open)
+2019-09-27T23:05:17.247+0800 I NETWORK  [conn32] received client metadata from 127.0.0.1:61839 conn32: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:05:17.248+0800 I -        [conn32] end connection 127.0.0.1:61839 (6 connections now open)
+2019-09-27T23:05:17.248+0800 I -        [conn31] end connection 127.0.0.1:61838 (6 connections now open)
+2019-09-27T23:05:47.325+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61845 #33 (5 connections now open)
+2019-09-27T23:05:47.326+0800 I NETWORK  [conn33] received client metadata from 127.0.0.1:61845 conn33: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:05:47.817+0800 I -        [conn33] end connection 127.0.0.1:61845 (5 connections now open)
+2019-09-27T23:05:53.330+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61846 #34 (5 connections now open)
+2019-09-27T23:05:53.331+0800 I NETWORK  [conn34] received client metadata from 127.0.0.1:61846 conn34: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:05:53.338+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61847 #35 (6 connections now open)
+2019-09-27T23:05:53.339+0800 I NETWORK  [conn35] received client metadata from 127.0.0.1:61847 conn35: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:05:53.341+0800 I -        [conn34] end connection 127.0.0.1:61846 (6 connections now open)
+2019-09-27T23:05:53.341+0800 I -        [conn35] end connection 127.0.0.1:61847 (6 connections now open)
+2019-09-27T23:06:00.215+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61850 #36 (5 connections now open)
+2019-09-27T23:06:00.216+0800 I NETWORK  [conn36] received client metadata from 127.0.0.1:61850 conn36: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:06:00.221+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61851 #37 (6 connections now open)
+2019-09-27T23:06:00.222+0800 I NETWORK  [conn37] received client metadata from 127.0.0.1:61851 conn37: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:06:00.224+0800 I -        [conn36] end connection 127.0.0.1:61850 (6 connections now open)
+2019-09-27T23:06:00.224+0800 I -        [conn37] end connection 127.0.0.1:61851 (6 connections now open)
+2019-09-27T23:06:58.453+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61857 #38 (5 connections now open)
+2019-09-27T23:06:58.454+0800 I NETWORK  [conn38] received client metadata from 127.0.0.1:61857 conn38: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:06:58.462+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61858 #39 (6 connections now open)
+2019-09-27T23:06:58.462+0800 I NETWORK  [conn39] received client metadata from 127.0.0.1:61858 conn39: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:06:58.464+0800 I -        [conn39] end connection 127.0.0.1:61858 (6 connections now open)
+2019-09-27T23:06:58.464+0800 I -        [conn38] end connection 127.0.0.1:61857 (6 connections now open)
+2019-09-27T23:08:01.363+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61872 #40 (5 connections now open)
+2019-09-27T23:08:01.364+0800 I NETWORK  [conn40] received client metadata from 127.0.0.1:61872 conn40: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:08:01.373+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61873 #41 (6 connections now open)
+2019-09-27T23:08:01.374+0800 I NETWORK  [conn41] received client metadata from 127.0.0.1:61873 conn41: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:08:01.376+0800 I -        [conn40] end connection 127.0.0.1:61872 (6 connections now open)
+2019-09-27T23:08:01.376+0800 I -        [conn41] end connection 127.0.0.1:61873 (6 connections now open)
+2019-09-27T23:08:34.875+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61880 #42 (5 connections now open)
+2019-09-27T23:08:34.876+0800 I NETWORK  [conn42] received client metadata from 127.0.0.1:61880 conn42: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:08:34.884+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61881 #43 (6 connections now open)
+2019-09-27T23:08:34.885+0800 I NETWORK  [conn43] received client metadata from 127.0.0.1:61881 conn43: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:08:34.887+0800 I -        [conn42] end connection 127.0.0.1:61880 (6 connections now open)
+2019-09-27T23:08:34.887+0800 I -        [conn43] end connection 127.0.0.1:61881 (6 connections now open)
+2019-09-27T23:11:22.430+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61906 #44 (5 connections now open)
+2019-09-27T23:11:22.431+0800 I NETWORK  [conn44] received client metadata from 127.0.0.1:61906 conn44: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:11:22.437+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61907 #45 (6 connections now open)
+2019-09-27T23:11:22.438+0800 I NETWORK  [conn45] received client metadata from 127.0.0.1:61907 conn45: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:11:22.440+0800 I -        [conn44] end connection 127.0.0.1:61906 (6 connections now open)
+2019-09-27T23:11:22.440+0800 I -        [conn45] end connection 127.0.0.1:61907 (6 connections now open)
+2019-09-27T23:12:10.315+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61913 #46 (5 connections now open)
+2019-09-27T23:12:10.316+0800 I NETWORK  [conn46] received client metadata from 127.0.0.1:61913 conn46: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:12:10.320+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61914 #47 (6 connections now open)
+2019-09-27T23:12:10.331+0800 I NETWORK  [conn47] received client metadata from 127.0.0.1:61914 conn47: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:12:10.332+0800 I -        [conn47] end connection 127.0.0.1:61914 (6 connections now open)
+2019-09-27T23:12:10.332+0800 I -        [conn46] end connection 127.0.0.1:61913 (6 connections now open)
+2019-09-27T23:12:56.246+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61922 #48 (5 connections now open)
+2019-09-27T23:12:56.247+0800 I NETWORK  [conn48] received client metadata from 127.0.0.1:61922 conn48: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:12:56.737+0800 I -        [conn48] end connection 127.0.0.1:61922 (5 connections now open)
+2019-09-27T23:13:26.343+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61928 #49 (5 connections now open)
+2019-09-27T23:13:26.344+0800 I NETWORK  [conn49] received client metadata from 127.0.0.1:61928 conn49: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:13:26.352+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61929 #50 (6 connections now open)
+2019-09-27T23:13:26.353+0800 I NETWORK  [conn50] received client metadata from 127.0.0.1:61929 conn50: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:13:26.354+0800 I -        [conn49] end connection 127.0.0.1:61928 (6 connections now open)
+2019-09-27T23:13:26.354+0800 I -        [conn50] end connection 127.0.0.1:61929 (6 connections now open)
+2019-09-27T23:13:44.916+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61933 #51 (5 connections now open)
+2019-09-27T23:13:44.917+0800 I NETWORK  [conn51] received client metadata from 127.0.0.1:61933 conn51: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:13:44.920+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61934 #52 (6 connections now open)
+2019-09-27T23:13:44.921+0800 I NETWORK  [conn52] received client metadata from 127.0.0.1:61934 conn52: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:13:44.923+0800 I -        [conn51] end connection 127.0.0.1:61933 (6 connections now open)
+2019-09-27T23:13:44.923+0800 I -        [conn52] end connection 127.0.0.1:61934 (6 connections now open)
+2019-09-27T23:13:54.786+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61938 #53 (5 connections now open)
+2019-09-27T23:13:54.787+0800 I NETWORK  [conn53] received client metadata from 127.0.0.1:61938 conn53: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:13:54.796+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61939 #54 (6 connections now open)
+2019-09-27T23:13:54.797+0800 I NETWORK  [conn54] received client metadata from 127.0.0.1:61939 conn54: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:13:54.798+0800 I -        [conn54] end connection 127.0.0.1:61939 (6 connections now open)
+2019-09-27T23:13:54.798+0800 I -        [conn53] end connection 127.0.0.1:61938 (6 connections now open)
+2019-09-27T23:14:14.082+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61942 #55 (5 connections now open)
+2019-09-27T23:14:14.083+0800 I NETWORK  [conn55] received client metadata from 127.0.0.1:61942 conn55: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:14:14.086+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61943 #56 (6 connections now open)
+2019-09-27T23:14:14.087+0800 I NETWORK  [conn56] received client metadata from 127.0.0.1:61943 conn56: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:14:14.089+0800 I -        [conn55] end connection 127.0.0.1:61942 (6 connections now open)
+2019-09-27T23:14:14.089+0800 I -        [conn56] end connection 127.0.0.1:61943 (6 connections now open)
+2019-09-27T23:14:22.210+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61947 #57 (5 connections now open)
+2019-09-27T23:14:22.212+0800 I NETWORK  [conn57] received client metadata from 127.0.0.1:61947 conn57: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:14:22.218+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:61948 #58 (6 connections now open)
+2019-09-27T23:14:22.219+0800 I NETWORK  [conn58] received client metadata from 127.0.0.1:61948 conn58: { driver: { name: "PyMongo", version: "3.9.0" }, os: { type: "Windows", name: "Windows 10", architecture: "AMD64", version: "10.0.17134-SP0" }, platform: "CPython 3.7.0.final.0" }
+2019-09-27T23:14:22.220+0800 I -        [conn57] end connection 127.0.0.1:61947 (6 connections now open)
+2019-09-27T23:14:22.220+0800 I -        [conn58] end connection 127.0.0.1:61948 (6 connections now open)
+
+
+
+
+
+
+
+Microsoft Windows [版本 10.0.17134.1006]
+(c) 2018 Microsoft Corporation。保留所有权利。
+
+C:\Users\67557>d:
+
+D:\>cd D:\mongodb\mongodb-win32-x86_64-2008plus-ssl-3.4.16-26-g315d49ee78\bin
+
+D:\mongodb\mongodb-win32-x86_64-2008plus-ssl-3.4.16-26-g315d49ee78\bin>mongo.exe
+MongoDB shell version v3.4.16-26-g315d49ee78
+connecting to: mongodb://127.0.0.1:27017
+MongoDB server version: 3.4.16-26-g315d49ee78
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+        http://docs.mongodb.org/
+Questions? Try the support group
+        http://groups.google.com/group/mongodb-user
+Server has startup warnings:
+2019-09-27T04:44:30.955-0700 I CONTROL  [initandlisten]
+2019-09-27T04:44:30.955-0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2019-09-27T04:44:30.956-0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2019-09-27T04:44:30.956-0700 I CONTROL  [initandlisten]
+> show dbs
+admin  0.000GB
+local  0.000GB
+> use qq
+switched to db qq
+> show dbs
+admin  0.000GB
+local  0.000GB
+> db
+qq
+> db.student.insert({name:"tom",age:18,genger:1,address:"北京",isDelete:0})
+WriteResult({ "nInserted" : 1 })
+> show dbs
+admin  0.000GB
+local  0.000GB
+qq     0.000GB
+> show collections
+student
+> db.createCollection("class")
+{ "ok" : 1 }
+> show collections
+class
+student
+> db.class.drop()
+true
+> show collections
+student
+> db.student.insert({name:"lilei",age:20,genger:1,address:"河北",isDelete:0})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({name:"lilei",age:20,genger:1,address:"河北",isDelete:0},{name:"nvde",age:21,genger:0,address:"邢台",isDelete:0})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert([{name:"lilei",age:20,genger:1,address:"河北",isDelete:0},{name:"nvde",age:21,genger:0,address:"邢台",isDelete:0}])
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 2,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+> db.student.save({name:"lilei1",age:20,genger:1,address:"河北",isDelete:0})
+WriteResult({ "nInserted" : 1 })
+> db.student.save({_id:Object("5d8e05ca5c017680745376f3"),name:"lilei111",age:20,genger:1,address:"河北",isDelete:0})
+WriteResult({
+        "nMatched" : 0,
+        "nUpserted" : 1,
+        "nModified" : 0,
+        "_id" : {
+                "0" : "5",
+                "1" : "d",
+                "2" : "8",
+                "3" : "e",
+                "4" : "0",
+                "5" : "5",
+                "6" : "c",
+                "7" : "a",
+                "8" : "5",
+                "9" : "c",
+                "10" : "0",
+                "11" : "1",
+                "12" : "7",
+                "13" : "6",
+                "14" : "8",
+                "15" : "0",
+                "16" : "7",
+                "17" : "4",
+                "18" : "5",
+                "19" : "3",
+                "20" : "7",
+                "21" : "6",
+                "22" : "f",
+                "23" : "3"
+        }
+})
+> db.student.save({_id:ObjectId("5d8e05ca5c017680745376f3"),name:"lilei111",age:20,genger:1,address:"河北",isDelete:0})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+>
+> db.student.update(
+... name:"lilei",
+... $set:{age:25}
+... )
+2019-09-27T21:08:22.232+0800 E QUERY    [thread1] SyntaxError: missing ) after argument list @(shell):2:4
+> db.student.update(
+... {name:"lilei"},
+... $set:{age:25}
+... )
+2019-09-27T21:09:41.450+0800 E QUERY    [thread1] SyntaxError: missing ) after argument list @(shell):3:4
+> db.student.update(
+... {name:"lilei"},
+... {$set:{age:25}}
+... )
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.student.update(
+... {name:"lilei111"},
+... {$inc:{age:40}},
+... {
+... multi:true
+... }
+... )
+WriteResult({ "nMatched" : 2, "nUpserted" : 0, "nModified" : 2 })
+> db.student.remove(
+... {name:"lilei111"},
+... {
+... justOne:true
+... }
+... )
+WriteResult({ "nRemoved" : 1 })
+> db.student.remove( {name:"lilei111"}, { justOne:true } )
+WriteResult({ "nRemoved" : 1 })
+> db.student.find()
+{ "_id" : ObjectId("5d8e00325c017680745376ee"), "name" : "tom", "age" : 18, "genger" : 1, "address" : "北京", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04645c017680745376ef"), "name" : "lilei", "age" : 25, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04af5c017680745376f0"), "name" : "lilei", "age" : 20, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04e85c017680745376f1"), "name" : "lilei", "age" : 20, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04e85c017680745376f2"), "name" : "nvde", "age" : 21, "genger" : 0, "address" : "邢台", "isDelete" : 0 }
+> db.student.find(
+... {name:"lilei"},
+... {
+... name:1,
+... age:1
+... }
+... )
+{ "_id" : ObjectId("5d8e04645c017680745376ef"), "name" : "lilei", "age" : 25 }
+{ "_id" : ObjectId("5d8e04af5c017680745376f0"), "name" : "lilei", "age" : 20 }
+{ "_id" : ObjectId("5d8e04e85c017680745376f1"), "name" : "lilei", "age" : 20 }
+> db.student.find(
+... {name:"lilei",age:"25"},
+... {
+... name:1,
+... age:1
+... }
+... )
+>
+> db.student.find(
+... [{name:"lilei"},{age:"25"}],
+... {
+... name:1,
+... age:1
+... }
+... )
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "Failed to parse: filter: [ { name: \"lilei\" }, { age: \"25\" } ]. 'filter' field must be of BSON type object.",
+        "code" : 9,
+        "codeName" : "FailedToParse"
+}
+> db.student.find(
+... {name:"lilei"},
+... {
+... name:1,
+... age:1
+... }
+... )
+{ "_id" : ObjectId("5d8e04645c017680745376ef"), "name" : "lilei", "age" : 25 }
+{ "_id" : ObjectId("5d8e04af5c017680745376f0"), "name" : "lilei", "age" : 20 }
+{ "_id" : ObjectId("5d8e04e85c017680745376f1"), "name" : "lilei", "age" : 20 }
+> db.student.find().pretty()
+{
+        "_id" : ObjectId("5d8e00325c017680745376ee"),
+        "name" : "tom",
+        "age" : 18,
+        "genger" : 1,
+        "address" : "北京",
+        "isDelete" : 0
+}
+{
+        "_id" : ObjectId("5d8e04645c017680745376ef"),
+        "name" : "lilei",
+        "age" : 25,
+        "genger" : 1,
+        "address" : "河北",
+        "isDelete" : 0
+}
+{
+        "_id" : ObjectId("5d8e04af5c017680745376f0"),
+        "name" : "lilei",
+        "age" : 20,
+        "genger" : 1,
+        "address" : "河北",
+        "isDelete" : 0
+}
+{
+        "_id" : ObjectId("5d8e04e85c017680745376f1"),
+        "name" : "lilei",
+        "age" : 20,
+        "genger" : 1,
+        "address" : "河北",
+        "isDelete" : 0
+}
+{
+        "_id" : ObjectId("5d8e04e85c017680745376f2"),
+        "name" : "nvde",
+        "age" : 21,
+        "genger" : 0,
+        "address" : "邢台",
+        "isDelete" : 0
+}
+> db.student.findOne({name:"lilei"})
+{
+        "_id" : ObjectId("5d8e04645c017680745376ef"),
+        "name" : "lilei",
+        "age" : 25,
+        "genger" : 1,
+        "address" : "河北",
+        "isDelete" : 0
+}
+> db.student.find({<age>:{$gt:<20>}})
+2019-09-27T21:50:17.978+0800 E QUERY    [thread1] SyntaxError: invalid property id @(shell):1:17
+> db.student.find({age:{$gt:20}})
+{ "_id" : ObjectId("5d8e04645c017680745376ef"), "name" : "lilei", "age" : 25, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04e85c017680745376f2"), "name" : "nvde", "age" : 21, "genger" : 0, "address" : "邢台", "isDelete" : 0 }
+> db.student.find({age:{$gte:20}})
+{ "_id" : ObjectId("5d8e04645c017680745376ef"), "name" : "lilei", "age" : 25, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04af5c017680745376f0"), "name" : "lilei", "age" : 20, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04e85c017680745376f1"), "name" : "lilei", "age" : 20, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04e85c017680745376f2"), "name" : "nvde", "age" : 21, "genger" : 0, "address" : "邢台", "isDelete" : 0 }
+> db.student.find({<_id>:Object("5d8e04e85c017680745376f2")})
+2019-09-27T21:59:32.354+0800 E QUERY    [thread1] SyntaxError: invalid property id @(shell):1:17
+> db.student.find({<_id>:ObjectId("5d8e04e85c017680745376f2")})
+2019-09-27T21:59:55.170+0800 E QUERY    [thread1] SyntaxError: invalid property id @(shell):1:17
+> db.student.find({_id:ObjectId("5d8e04e85c017680745376f2")})
+{ "_id" : ObjectId("5d8e04e85c017680745376f2"), "name" : "nvde", "age" : 21, "genger" : 0, "address" : "邢台", "isDelete" : 0 }
+> db.student.find().count()
+5
+> db.student.find({name:/li/})
+{ "_id" : ObjectId("5d8e04645c017680745376ef"), "name" : "lilei", "age" : 25, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04af5c017680745376f0"), "name" : "lilei", "age" : 20, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04e85c017680745376f1"), "name" : "lilei", "age" : 20, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+> db.student.find({name:/^li/})
+{ "_id" : ObjectId("5d8e04645c017680745376ef"), "name" : "lilei", "age" : 25, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04af5c017680745376f0"), "name" : "lilei", "age" : 20, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04e85c017680745376f1"), "name" : "lilei", "age" : 20, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+> db.student.find({gender:1,age:{$gt:20}})
+> db.student.find({genger:1,age:{$gt:20}})
+{ "_id" : ObjectId("5d8e04645c017680745376ef"), "name" : "lilei", "age" : 25, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+> db.student.find(
+... {
+... $or:[
+... name:"lilei",age:{$gt20}
+... ]
+... }
+... )
+2019-09-27T22:12:03.618+0800 E QUERY    [thread1] SyntaxError: missing ] after element list @(shell):4:4
+> db.student.find(
+... {
+... $or:[
+... name:"lilei",age:{$gt:20}
+... ]
+... }
+... )
+2019-09-27T22:13:12.764+0800 E QUERY    [thread1] SyntaxError: missing ] after element list @(shell):4:4
+> db.student.find(
+... {
+... $or:[
+... {name:"lilei"},{age:{$gt:20}}
+... ]
+... }
+... )
+{ "_id" : ObjectId("5d8e04645c017680745376ef"), "name" : "lilei", "age" : 25, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04af5c017680745376f0"), "name" : "lilei", "age" : 20, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04e85c017680745376f1"), "name" : "lilei", "age" : 20, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04e85c017680745376f2"), "name" : "nvde", "age" : 21, "genger" : 0, "address" : "邢台", "isDelete" : 0 }
+> db.student.find().limit(2)
+{ "_id" : ObjectId("5d8e00325c017680745376ee"), "name" : "tom", "age" : 18, "genger" : 1, "address" : "北京", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04645c017680745376ef"), "name" : "lilei", "age" : 25, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+> db.student.find().skip(2)
+{ "_id" : ObjectId("5d8e04af5c017680745376f0"), "name" : "lilei", "age" : 20, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04e85c017680745376f1"), "name" : "lilei", "age" : 20, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04e85c017680745376f2"), "name" : "nvde", "age" : 21, "genger" : 0, "address" : "邢台", "isDelete" : 0 }
+> db.student.find().limit(2).skip(2)
+{ "_id" : ObjectId("5d8e04af5c017680745376f0"), "name" : "lilei", "age" : 20, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04e85c017680745376f1"), "name" : "lilei", "age" : 20, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+> db.student.find().limit(4).skip(2)
+{ "_id" : ObjectId("5d8e04af5c017680745376f0"), "name" : "lilei", "age" : 20, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04e85c017680745376f1"), "name" : "lilei", "age" : 20, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04e85c017680745376f2"), "name" : "nvde", "age" : 21, "genger" : 0, "address" : "邢台", "isDelete" : 0 }
+> db.student.find().skip(2)limit(2)
+2019-09-27T22:26:58.113+0800 E QUERY    [thread1] SyntaxError: missing ; before statement @(shell):1:25
+> db.student.find().skip(2).limit(2)
+{ "_id" : ObjectId("5d8e04af5c017680745376f0"), "name" : "lilei", "age" : 20, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04e85c017680745376f1"), "name" : "lilei", "age" : 20, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+> db.student.find().sort({age:1})
+{ "_id" : ObjectId("5d8e00325c017680745376ee"), "name" : "tom", "age" : 18, "genger" : 1, "address" : "北京", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04af5c017680745376f0"), "name" : "lilei", "age" : 20, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04e85c017680745376f1"), "name" : "lilei", "age" : 20, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04e85c017680745376f2"), "name" : "nvde", "age" : 21, "genger" : 0, "address" : "邢台", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04645c017680745376ef"), "name" : "lilei", "age" : 25, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+> db.student.find()
+{ "_id" : ObjectId("5d8e00325c017680745376ee"), "name" : "tom", "age" : 18, "genger" : 1, "address" : "北京", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04645c017680745376ef"), "name" : "lilei", "age" : 25, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04af5c017680745376f0"), "name" : "lilei", "age" : 20, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04e85c017680745376f1"), "name" : "lilei", "age" : 20, "genger" : 1, "address" : "河北", "isDelete" : 0 }
+{ "_id" : ObjectId("5d8e04e85c017680745376f2"), "name" : "nvde", "age" : 21, "genger" : 0, "address" : "邢台", "isDelete" : 0 }
+>

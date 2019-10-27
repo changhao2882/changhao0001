@@ -1,0 +1,160 @@
+String:
+	概述：String是redis最基本的类型，最大能存储521MB的数据，String类型是二进制安全的，即可以存储任何数据，比如数字，图片，序列化对象等
+	1.设置
+		设置键值
+			set <key> '<value>'
+			set name 'changhao'
+		设置键值及过期事件，以秒为单位
+			setex key senconds value
+			setex age 10 'hahah'
+		设置多个键值
+		mset [<key> '<value>' <key> '<value>' <key> '<value>'...]
+	2.获取
+		根据键获取值，如果键不存在则返回null
+			get key
+		根据多个键获取多个值，如果键不存在则返回null
+			mget key [key key ...]
+	3.运算
+		要求：值是字符串类型的数字
+		将key对应的值+1
+			incr key
+		将key对应的值-1
+			decr key
+		将key对应的值加整数
+			incrby key intnum
+			incrby name 10
+		将key对应的值减整数
+			decrby key intnum
+	4.其他
+		追加值
+			append key value
+		获取值长度
+			strlen key
+key:
+	查找键,参数支持正则
+		keys pattern
+			kys * 
+	判断键是否存在，如果存在返回1，不存在返回0
+		exists key [key key ...]
+	查看键对应的value类型
+		type key
+	删除键即对应的键和值
+		del key [key key ...]
+	设置过期事件，以秒为单位
+			expire key senconds
+	查看有效时间，以秒为单位
+		ttl key
+hash:
+	
+命令	描述
+	设置单个值
+		hset <key> <field> <value>
+			hset student name lilei
+	设置多个值
+		hmset key field value [field value field value ...]
+
+	获取一个属性的值
+		hget key field
+	获取多个属性的值
+		hmget key field [field field ...]
+	获取所有属性和值
+		hgetall key
+	获取所有属性
+		hkeys key
+	获取所有值
+		hvals key
+	返回包含属性的个数
+		hlen key
+
+	判断属性是否存在,存在1不存在0
+		hexists key field
+	删除属性及值
+		hdel key field
+	返回值的字符串长度
+		hstrlen key field
+list:
+	BLPOP key [key ...] timeout
+	删除，并获得该列表中的第一元素，或阻塞，直到有一个可用
+
+	BRPOP key [key ...] timeout
+	删除，并获得该列表中的最后一个元素，或阻塞，直到有一个可用
+
+	BRPOPLPUSH source destination timeout
+	弹出一个列表的值，将它推到另一个列表，并返回它;或阻塞，直到有一个可用
+
+	LINDEX key index
+	通过下标获取值
+
+	LINSERT key BEFORE|AFTER pivot value    
+	在列表中的另一个元素之前或之后插入一个元素     linsert list before 2 5
+
+	LLEN key
+	获得队列(List)的长度
+
+	LPOP key
+	从队列的左边出队一个元素
+
+	LPUSH key value [value ...]
+	从队列的左边入队一个或多个元素
+
+	LPUSHX key value
+	当队列存在时，从队到左边入队一个元素
+
+	LRANGE key start stop
+	从列表中获取指定返回的元素   start stop为下标可为负数
+
+	LREM key count value
+	从列表中删除元素
+
+	LSET key index value
+	设置队列里面一个元素的值     lset list 3 6    其中3为下标  -1尾部
+
+	LTRIM key start stop
+	修剪到指定范围内的清单    留下start stop范围内的数值
+
+	RPOP key
+	从队列的右边出队一个元素
+
+	RPOPLPUSH source destination
+	删除列表中的最后一个元素，将其追加到另一个列表
+
+	RPUSH key value [value ...]
+	从队列的右边入队一个元素
+
+	RPUSHX key value
+	从队列的右边入队一个元素，仅队列存在时有效
+set:
+	概述：无序集合，元素类型为String类型，元素具有唯一性，不重复
+	设置：
+		添加元素  member:数据
+		sadd key member [member member ...]
+	获取：
+		返回key集合中所有元素
+		smembers key
+		返回key集合中元素个数
+		scard key
+	其他：
+		求多个集合的交集
+			sinter key [key key ...]
+		求多个集合的差集
+			sdiff key [key key ...]
+		求多个集合的合集
+			sunion key [key key ...]
+		判断元素是否在集合中   member:数据  如果存在返回1，不存在返回0
+			sismember key member
+zset:
+	概述：有序集合，元素类型为String，元素具有唯一性，不能重复
+		  每个元素都会关联一个double类型的score（权重），通过权重大小排序，元素的score可以相同
+	设置：
+		添加
+			zadd key score member [member member ...]
+			zadd key 1 a 2 b 3 c ......
+	获取：
+		返回指定范围的元素
+			zrange key start end
+		返回元素个数
+			zcard key
+		返回有序集合key在，score在min和max之间的元素
+			zcount key min max
+		返回有序集合中，成员menber的scord值
+			zscore key member

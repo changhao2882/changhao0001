@@ -1,0 +1,194 @@
+创建数据库（不存在就创建，否则就切换）：
+	use 数据库名
+查看所有数据库：
+	show dbs
+查看当前数据库：
+	db  或  db.getName()
+插入数据：
+	db.student.insert({name:"tom",age:18,genger:1,address:"北京",isDelete:0})
+断开连接：
+	exit
+查看命令API:
+	help
+删除数据库(前提是正在使用当前数据库)：
+	db.dropDatabase()
+
+
+查看当前数据库下有哪些集合：
+	show collections
+创建集合：
+	a、   db.createCollection("集合名")
+	b、   db.集合名.insert(文档)  集合存在就是插入
+	a与b区别：a是空的集合，b也是并添加一个空的文档
+删除当前数据库中的集合：
+	db.集合名.drop()
+
+
+插入文档
+	a、   db.集合名.insert(文档)    插入一个或多个
+	b、 db.集合名.save(文档)  如果不指定_id字段，save()类似于insert(),如果指定则会更新_id的数据
+		db.student.save({_id:ObjectId("5d8e05ca5c017680745376f3"),name:"lilei111",age:20,genger:1,address:"河北",isDelete:0})
+更新文档
+	update()
+		db.集合名.update(
+			<query>,                        update的查询条件，类似与sql中where后面的
+			<update>,						update的对象和一些更新的操作符（$set(直接更新),$inc（在原有的基础上累加结果）...）
+			{
+				upset:<boolean>,			可选，如果不存在update的记录，是否当新数据插入，true或false，默认为false
+				multi:<boolean>,			可选，mongodb默认为false，只更新找到的第一条记录，true便按照条件查找出来的数据全部更新
+				writeConcern:<document>,	可选，抛出异常的级别
+			}
+		)
+
+		db.student.update(
+			{name:"lilei111"},
+			{$inc:{age:40}},
+			{
+				multi:true
+			}
+		)
+	save()通过文档替换文档
+		db.集合名.save(
+			添加的文档数据,
+			{
+				writeConcern:<document>,	可选，抛出异常的级别
+			}
+		)
+删除文档
+	remove()执行前先执行find()命令来判断执行的条件是否存在是一个良好的习惯
+		db.集合名.remove(
+			query,							可选，删除文档的条件，没有全删
+			{
+				justOne:<boolean>,   		可选，true或1为删除一个文档，默认false
+				writeConcern:<document>,	可选，抛出异常的级别
+			}
+		)
+
+		db.student.remove(
+			{name:"lilei111"},
+			{
+				justOne:true
+			}
+		)
+查询文档
+	find()
+		db.集合名.find()   查询全部
+		db.student.find()
+	查询指定列
+		db.集合名.find(
+			query,							可选，查询文档的条件，没有全删
+			{
+				<key>:1,   		查看哪一列
+				<key>:1,
+				<key>:1...
+			}
+		)
+		db.student.find(
+			{name:"lilei"},
+			{
+				name:1,
+				age:1
+			}
+		)
+		pretty()  以格式化的方式来显示文档
+			db.student.find().pretty()
+		findOne()  查询匹配结果的第一条数据
+			db.student.findOne({name:"lilei"})
+
+查询条件操作符
+	作用:用于比较表达式，并从mongodb集合中获取数据
+	大于：$gt
+		db.集合.find({<key>:{$gt:<value>}})
+		db.student.find({age:{$gt:20}})
+	大于等于：$gte
+		db.集合.find({<key>:{$gte:<value>}})
+		db.student.find({age:{$gte:20}})
+	小于：$lt
+		db.集合.find({<key>:{$lt:<value>}})
+		db.student.find({age:{$lt:20}})
+	小于等于：$lte
+		db.集合.find({<key>:{$lte:<value>}})
+		db.student.find({age:{$lte:20}})
+	大于等于 和 小于等于：$gte 和 $lte
+		db.集合.find({<key>:{$gte:<value>,$lte:<value>}})
+	等于：  :
+		db.集合.find({<key>:<value>})
+	使用_id进行查询：
+		db.集合.find({<_id>:ObjectId("<value>")})
+		db.student.find({_id:ObjectId("5d8e04e85c017680745376f2")})
+	查询某个结果集的数据条数：
+		db.集合.find().count()
+		db.student.find().count()
+	查询某个字段的值当中是否包含另一个值
+		db.集合.find({<key>:/<value>/})
+		db.student.find({name:/li/})
+	查询某个字段的值是否包含以另一个值开头
+		db.集合.find({<key>:/^<value>/})
+		db.student.find({name:/^li/})
+条件查询and 和 or
+	and:
+		db.集合.find({条件1,条件2,...,条件n})
+		db.student.find({genger:1,age:{$gt:20}})
+	or:
+		db.集合.find(
+			{
+				$or:[
+					{条件1},{条件2},...,{条件n}
+				]
+			}
+		)
+		db.student.find(
+			{
+				$or:[
+					{name:"lilei"},{age:{$gt:20}}
+				]
+			}
+		)
+	and 和 or 联合使用：
+		db.集合.find(
+			{
+				条件1,
+				条件2,
+				...,
+				条件n,
+				$or:[
+					{条件1},{条件2},...,{条件n}
+				]
+			}
+		)
+limit（）:读取指定数量的数据记录  skip（）:跳过指定数量的数据
+	db.student.find().limit(2)
+	db.student.find().skip(2)
+	联合使用（可实现分页功能）：
+		db.student.find().skip(2).limit(2)
+排序(1:升序 -1:降序)：
+	db.集合.find().sort({<key>:1|-1})
+	db.student.find().sort({age:1})
+
+
+
+
+
+
+
+,
+			{
+				upset:<boolean>,
+				multi:<boolean>,
+				writeConcern:<document>,
+			}
+
+	db.student.save({name:"lilei1",age:20,genger:1,address:"河北",isDelete:0})
+	db.student.insert([{name:"lilei",age:20,genger:1,address:"河北",isDelete:0},{name:"nvde",age:21,genger:0,address:"邢台",isDelete:0}])
+
+
+
+
+
+
+
+
+
+
+
+
