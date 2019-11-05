@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link  href="css/style.css" type="text/css" rel="stylesheet"/>
+		<style type="text/css">
+			body{
+				background-image: url(img/背景.jpg);
+				background-color: #000000;
+				background-size: 100% 1080px;
+				background-repeat:no-repeat;  /*设置图片不要自动填充。*/
+			}
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#box{
+				width: 700px;
+				height: 2000px;
+				margin: 0 auto;
+			}
+			#logol{
+				height: 100px;
+				background-color: #FF8888;
+			}
+			#daohang{
+				height: 26px;
+				background-color: red;
+				border:solid #FFD700 3px;/*加边框*/
+			}
+			#main{
+				height: 600px;
+			}
+			#leftMain{
+				display: inline-block;
+				width: 350px;
+				height: 600px;
+				background-color: aqua;
+			}
+			#rightMain{
+				display: inline-block;
+				width: 350px;
+				height: 600px;
+				background-color: antiquewhite;
+				float: right;
+			}
+			#footer{
+				height: 43px;
+				background-color: blueviolet;
+			}
+		</style>
+	</head>
+	<body >
+		<div id="box">
+			<div id="logol"></div>
+			<div id="daohang"></div>
+			<div id="guanggao"></div>
+			<div id="main">
+				<div id="leftMain"></div>
+				<div id="rightMain"></div>
+			</div>
+			<div id="footer"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="box">
+			<p>年后吗实力对比，锁定</p>
+		</div>
+		<div id="box1">
+			asfgsrhdj
+		</div>
+		
+		<script type="text/javascript">
+			//Dom元素载入后就能执行,载入速度快
+			$(document).ready(function(){
+				/*
+					//获取，设置内容（纯文本）
+					text()
+					text(val)
+					//获取，设置内容（可以为标签元素）
+					html()  			
+					html(val)
+					//对元素值的操作
+					val()
+					val(val)
+					可以为checkbox，radio，select设置值    就是对value属性值的操作
+					$div=$("input").val([1,0,0])  //1，2，3
+					$div=$("select").val(["列表1","列表2","列表3",...])   <option>列表1</option>
+				
+				*/
+				$div=$("div")
+				console.log($div.text("123456"))
+			})
+		</script>
+	</body>
+</html>

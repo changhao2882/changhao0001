@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body style="width: 900px">
+		<div id="box">
+			<input type="text" name="in" id="put" value="" />
+			<a href="red.html" id="link">点我跳转</a>
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				$("body").bind("click",function(){
+					$(this).css("background-color","blue")
+				})
+				// $("#box").bind("click",function(e){
+				// 	$(this).css("backgroundColor","yellow")
+				// 	//阻止冒泡e.stopPropagation()
+				// 	//可以阻止冒泡和默认行为
+				// 	return false
+				// })
+				// $("#put").bind("click",function(e){
+				// 	//阻止冒泡e.stopPropagation()
+				// 	//可以阻止冒泡和默认行为
+				// 	return false
+				// })
+				$("#link").bind("click",function(){
+					var d=window.confirm("确认跳转？？")
+					//阻止冒泡e.stopPropagation()    e.preventDefault()
+					//可以阻止冒泡和默认行为
+					//return false
+					if(d==false){
+						return false
+					}
+				})
+			})
+		</script>
+	</body>
+</html>

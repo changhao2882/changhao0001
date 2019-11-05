@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="box">
+			<p>aaaaaaa</p>
+			<p>bbbbbbb</p>
+			<p>aaaaaaa</p>
+			<p>bbbbbbb</p>
+			<p>aaaaaaa</p>
+			<p>bbbbbbb</p>
+		</div>
+		<div id="box1">
+			<p>aaaaaaa</p>
+			<p>bbbbbbb</p>
+		</div>
+		<p>aaaaaaa</p>
+		<p>bbbbbbb</p>
+		<p>aaaaaaa</p>
+		<p>bbbbbbb</p>
+		<p>aaaaaaa</p>
+		<p>bbbbbbb</p>
+		<script type="text/javascript">
+			//Dom元素载入后就能执行,载入速度快
+			$(document).ready(function(){
+				//内部插入节点
+				var $jsp=$("<p>111<p/>")
+				var $box=$("#box")
+				console.log($jsp)
+				$box.append($jsp)
+				//appenf(内容)为所有匹配的元素的内部追加内容  A.appendTo(B)将所有匹配的元素添加到令一个集合元素中A->B
+				//prepend(内容)前边添加 prependTo(内容)
+				////外部插入节点  after()为所匹配的元素的之后追加内容  insertAfter()为所匹配的指定的元素的之后追加内容 
+				//before() insertBefore() 前边
+				
+				//删除节点
+				// remove()用于从DOM中删除匹配的元素
+				// detach()用于从DOM中删除匹配的元素,不会把var $box=$("#box")这个对象$box删除,以后还可以用$box
+				// empty()只是清空标签内容
+				
+				//复制节点
+				//为p添加事件(新创建的不会加入事件，适用于给ID属性的绑定事件)   传入true事件也克隆过去
+				$box.bind("click",function(){
+					$(this).clone(true).insertAfter($(this))
+				})
+				
+				//替换节点
+				//A.replaceAll(B) B换成A
+				//A.replaceWith(B) 用匹配的元素替换指定的元素A换成B
+				
+				//遍历节点
+				$("p").each(function(index){
+					$(this).attr("title","我是第"+(index+1)+"个p标签")
+				})
+				
+				//包裹节点
+				//.wrap(标签)  //去除包裹unwrap()  //整体包裹warpAll()  //包裹内部wrapInner()
+				
+				//对css样式操作
+				//addClass()  removeClass()   toggleClass(class,switch)如果存在就删除,不存在就添加  switch=true则加上对应的css类,否则就删除
+				//$box.css("background-color","red")
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="box">
+			<p>aaaaaaa</p>
+			<p>bbbbbbb</p>
+			<p>aaaaaaa</p>
+			<p>bbbbbbb</p>
+			<p>aaaaaaa</p>
+			<p>bbbbbbb</p>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//$("div p").one("click",function(){})添加一次性事件
+				//为p添加事件(新创建的不会加入事件，适用于给ID属性的绑定事件)   传入true事件也克隆过去
+				$("div p").bind("click",function(){
+					$(this).clone(true).insertAfter($(this))
+				})
+				//移除事件
+				//$("div").unbind("click")
+				
+				$("div").delegate("p","click",function(){
+					$(this).clone(true).insertAfter($(this))
+				})
+				//移除事件
+				//$("div").undelegate("p","click")
+				
+				$("div").on("click","p",function(){
+					$(this).clone(true).insertAfter($(this))
+				})
+				//移除事件
+				//$("div").off("click","p")
+				
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="box1" style="border: 1px solid burlywood;width: 800px;height: 400px;">
+			<img src="img/background.png" width="800px" height="400px" draggable="true" id="img">
+		</div>
+		<div id="box2" style="border: 1px solid burlywood;width: 800px;height: 400px;">
+		</div>
+		<script type="text/javascript">
+			window.onload=function(){
+				var box1=document.getElementById("box1")
+				var box2=document.getElementById("box2")
+				var img=document.getElementById("img")
+				img.ondragstart=function(e){
+					var data=e.dataTransfer
+					data.setData("text/plain",this.id)
+					console.log("****1")
+				}
+				box2.ondragover=function(e){
+					e.preventDefault()
+					console.log("****2")
+				}
+				box2.ondrop=function(e){
+					var data=e.dataTransfer
+					var text=data.getData("text/plain")
+					//插入
+					e.target.appendChild(document.getElementById(text))
+					console.log("****3")
+				}
+				box1.ondragover=function(e){
+					e.preventDefault()
+					console.log("****2")
+				}
+				box1.ondrop=function(e){
+					var data=e.dataTransfer
+					var text=data.getData("text/plain")
+					//插入
+					e.target.appendChild(document.getElementById(text))
+					console.log("****3")
+				}
+				
+				
+			}
+		</script>
+	</body>
+</html>

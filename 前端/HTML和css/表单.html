@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/*placeholder="显示内容"*/
+			/* disabled 禁用（多选框） */
+			/* multiple多选图片 */
+			/* 右对齐margin-left:auto; 左对齐margin-right:auto; 以及居中对齐margin:0 auto; */
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#p1{
+				text-align: right;
+				padding-top: 10px;
+			}
+			#box{
+				width: 800px;
+				height: 600px;
+				background-color: #FAEBD7;
+				margin: 0 auto;
+			}
+			#name1{
+				padding-top: 10px;
+				/* margin-left: 33px; */
+				line-height: 30px;
+			}
+			fieldset{
+				border-left: none;
+				border-right: none;
+				border-bottom: none;
+			}
+			label{
+				display: inline-block;
+				text-align: right;
+				width: 150px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<form action="#" method="">
+				<div id="p1">*号所在项为必填项</div>
+				<fieldset>
+					<legend>个人信息</legend>
+					<div id="name1">
+						<label for="name">姓名：</label><input type="text" name="" id="name" value="" placeholder="请输入姓名"/><br />
+						<label for="address">地址：</label><input type="text" name="" id="address" value="" placeholder="请输入地址"/><br />
+						<label for="birthday">上锁生日：</label><input type="date" name="" id="birthday" value="" style="height: 15px;width: 157px;"/><br />
+					</div>
+					<div><input type="date" name="" id="" value="" /><input type="color" name="" id="" value="" /> </div>
+				</fieldset>
+			</form>
+		</div>
+	</body>
+</html>

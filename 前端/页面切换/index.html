@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 800px;
+				height: 1000px;
+				background-color: gray;
+				margin: 0 auto;
+				position: relative;
+			}
+			ul{
+				list-style: none;
+				position: absolute;
+				bottom: 20px;
+				left: 100px;
+			}
+			li{
+				width: 80px;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				float: left;
+				background-color: aquamarine;
+				margin-left: 5px;
+			}
+			.text,img{
+				float: left;
+			}
+			.d{
+				height: 100px;
+			}
+		</style>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var imgs=$(".img")
+				var names=$(".name")
+				var address=$(".address")
+				$.ajax({
+					type:"get",
+					url:"",
+					async:true,
+					data:{a:1,b:2},
+					dataType:"json",
+					success:function(data,textStatus){
+						//console.log(data)
+						//console.log(textStatus)鎴愬姛鐘舵��
+						var d=data["shop_data"]
+						for(var i=0;i<d.length;i++){
+							imgs.eq(i).attr("src",d[i]["shopico"])
+						}
+						
+					}
+				});
+				$("li").bind("click",function(){
+					var page=$(this.text)
+					/*ajax中url中进入下一个文件*/
+				})
+			})
+		</script>
+	</head>
+	<body>
+		
+		<div id="box">
+			<div class="d" id="d1">
+				<img class="img" src="img/background.png" width="50px" height="50px"/>
+				<div id="text">
+					<p class="name">sdfsg</p>
+					<p class="address">sgsgsgshshdhdjfhffh</p>
+				</div>
+			</div>
+			<div class="d" id="d2">
+				<img class="img" src="img/background.png" width="50px" height="50px"/>
+				<div id="text">
+					<p class="name">sdfsg</p>
+					<p class="address">sgsgsgshshdhdjfhffh</p>
+				</div>
+			</div>
+			<div class="d" id="d3">
+				<img class="img" src="img/background.png" width="50px" height="50px"/>
+				<div id="text">
+					<p class="name">sdfsg</p>
+					<p class="address">sgsgsgshshdhdjfhffh</p>
+				</div>
+			</div>
+			<div class="d" id="d4">
+				<img class="img" src="img/background.png" width="50px" height="50px"/>
+				<div id="text">
+					<p class="name">sdfsg</p>
+					<p class="address">sgsgsgshshdhdjfhffh</p>
+				</div>
+			</div>
+			<div class="d" id="d5">
+				<img class="img" src="img/background.png" width="50px" height="50px"/>
+				<div id="text">
+					<p class="name">sdfsg</p>
+					<p class="address">sgsgsgshshdhdjfhffh</p>
+				</div>
+			</div>
+			<ul>
+				<li>上一页</li>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>下一页</li>
+			</ul>
+		</div>
+	</body>
+</html>

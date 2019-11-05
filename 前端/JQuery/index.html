@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+	<body>
+		<div id="box1" class="box1"></div>
+		<div class="box2"></div>
+		<p>641611111</p>
+		<div id="box3" class="box3">
+			<p>十多个很疯狂</p>
+			<div id="">
+				<p>fffffffff</p>
+			</div>
+		</div>
+		<p>fffffffff</p>
+		<script type="text/javascript">
+			//Dom元素载入后就能执行,载入速度快
+			$(document).ready(function(){
+				//dom对象
+				var jsDiv=document.getElementById("box1");
+				//JQuery对象   $("#box1")JQuery包装集
+				var $jqDiv=$("#box1").html("123456");
+				//jq -> dom
+				var jsDiv1=$jqDiv[0]
+				var jsDiv2=$jqDiv.get(0)
+				//dom -> jq
+				var $jqDiv1=$(jsDiv)
+				
+				$("#box3 p").html("123456789")
+				//$("#box3>p").html("123456789") 
+				
+				//同辈后一个
+				//$("#box1+div").html("12222222222222223456789")
+				//同辈所有
+				//$("#box1~p").html("12222222222222")
+				// $("#box3 p").addClass("")  添加类
+				// $("#box3 p").removeClass("") 移除类
+				
+				//设置属性 
+				//var $jqObj=$(from :checkbox)
+				//$jqObj.attr("checked","checked")
+			})
+		</script>
+	</body>
+</html>

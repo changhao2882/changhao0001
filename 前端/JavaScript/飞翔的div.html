@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#d1{
+				height: 700px;
+				width: 1000px;
+				background-color: aquamarine;
+				position: relative;
+				border: solid red 3px;
+			}
+			#box{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				position: absolute;
+				left: 0;
+				top: 0;
+				border-radius: 50px;
+			}
+			button{
+				position: absolute;
+				z-index: 9999;
+				left: 0;
+				top: 0;
+			}
+		</style>
+		<script type="text/javascript">
+			function fly(){
+				var div = document.getElementById("box");
+				var speedx = 5;
+				var speedy = 5;
+				setInterval(function(){
+					div.style.left = div.offsetLeft + speedx +"px";
+					div.style.top = div.offsetTop + speedy +"px";
+					//var x=parseInt(window.getComputedStyle(div,null).left);  //div.offsetLeft直接拿到数字类型
+					if(div.offsetTop>=700-100 || div.offsetTop <=0){
+						speedy *= -1;
+					}
+					if(div.offsetLeft>=1000-100 || div.offsetLeft <=0){
+						speedx *= -1;
+					}
+				},50)
+			}
+		</script>
+	</head>
+	<body>
+		<div id="d1">
+			<div id="box">
+			</div>
+			<button onclick="fly()">fly</button>
+		</div>
+		
+	</body>
+</html>

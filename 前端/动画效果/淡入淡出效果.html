@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		<button type="button" id="btn1">隐藏</button>
+		<button type="button" id="btn2">显示</button>
+		<button type="button" id="btn3">改变透明度</button>
+		<button type="button" id="btn4">切换状态</button>
+		<script type="text/javascript">
+			var $box=$("#box")
+			//slow 600  normal 400 fast 200
+			$("#btn1").click(function(){
+				$box.fadeOut()(1000,function(){
+					console.log("动画结束后调用")
+				})
+			})
+			$("#btn2").click(function(){
+				$box.fadeIn(1000,function(){
+					console.log("动画结束后调用")
+				})
+			})
+			
+			$("#btn3").click(function(){
+				$box.fadeTo(1000,0.1)
+			})
+			$("#btn4").click(function(){
+				$box.fadeToggle()(1000,function(){
+					console.log("动画结束后调用")
+				})
+			})
+			
+		</script>
+	</body>
+</html>

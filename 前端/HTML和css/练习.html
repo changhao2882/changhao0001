@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#box{
+				width: 1000px;
+				margin: 0 auto;
+			}
+			#logol{
+				height: 100px;
+				background-color: red;
+			}
+			#daohang{
+				height: 24px;
+				background-color: yellow;
+			}
+			#main{
+				height: 700px;
+			}
+			#leftMain{
+				display: inline-block;
+				width: 300px;
+				height: 700px;
+				background-color: aqua;
+			}
+			#rightMain{
+				display: inline-block;
+				width: 700px;
+				height: 700px;
+				background-color: antiquewhite;
+				float: right;
+			}
+			#footer{
+				height: 50px;
+				background-color: blueviolet;
+			}
+			#daohangBox{
+				float: right;
+			}
+			#daohangBox>ul>li{
+				list-style: none;
+				display: inline-block;
+				width: 100px;
+				text-align: center;
+				line-height: 24px;
+			}
+			#div1{
+				text-align: center;
+				line-height: 25px;
+			}
+			
+			
+			#leftMain li{
+				list-style: none;
+				font-size: 24px;
+			}
+			#leftMain li a{
+				color: #FFD700;
+				text-decoration: none;
+			}
+			#menu{
+				width: 300px;
+				/* margin: 50px; */
+			}
+			#menu>li{
+				background-image: url(img/background.png);
+				background-size: 100% 30px;
+				background-repeat:no-repeat;
+				line-height: 30px;
+				text-indent: 30px;
+			}
+			#menu ul{
+				display: none;
+			}
+			#menu ul li{
+				text-indent: 60px;
+				font-size: 16px;
+			}
+			#menu>li:hover ul{ /*放上去*/
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="logol"></div>
+			<div id="daohang">
+				<div id="daohangBox">
+					<ul>
+						<li>首页</li>|
+						<li>关于致达</li>|
+						<li>企业结构</li>|
+						<li>企业文化</li>|
+						<li>人力资源</li>|
+						<li>慈善公益</li>|
+						<li>网站导航</li>|
+						<li>登录OA系统</li>
+					</ul>
+				</div>
+			</div>
+			<div id="main">
+				<div id="leftMain">
+					<img src="img/背景.jpg" width="300px" height="200px" />
+					<ul id="menu">
+						<li>
+							<a href="#">good</a>
+							<ul>
+								<li>good1</li>
+								<li>good2</li>
+								<li>good3</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">nice</a>
+							<ul>
+								<li>nice1</li>
+								<li>nice2</li>
+								<li>nice3</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">handsome</a>
+							<ul>
+								<li>handsome1</li>
+								<li>handsome2</li>
+								<li>handsome3</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">cool</a>
+							<ul>
+								<li>cool1</li>
+								<li>cool2</li>
+								<li>cool3</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div id="rightMain"></div>
+			</div>
+			<div id="footer">
+				<div id="div1">
+					<p>fgerhjfkkkfkkgsgdggsggdfgdfgdfgsdgfkfkufky</p>
+					<p>gshdhfhfhsgssgsggsgsfhf</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

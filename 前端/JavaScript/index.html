@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/file1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/* getElementById() 返回对拥有指定 id 的第一个对象的引用。
+			getElementsByName() 返回带有指定名称的对象集合。 
+			getElementsByTagName() 返回带有指定标签名的对象集合。 
+			var a = document.getElementsByClassName()*/
+			function aaa(){
+				// document.getElementById("in").placeholder = "qwrwes";
+				//var a = document.getElementById("in").placeholder;
+				//可以获取自定义属性的值
+				//var a = document.getElementById("in").getAttribute("placeholder"); //修改用.setAttribute("placeholder","新的值")
+				//移除元素的某个属性
+				//document.getElementById("in").removeAttribute("属性名");
+				//设置不存在的话相当于增加
+				//alert(a)
+				
+				
+				//获取文本节点
+				//var a = document.getElementById("id").innerHTML; 
+				//outerHTML获取内容,包含标签
+				//innerText获取文本
+				//替换
+				//document.getElementById("id").innerHTML="<h1>good</h1>"
+				//alert(a)
+			}
+			function changeColor(){
+				var a = parseInt(Math.random()*256);
+				var b = parseInt(Math.random()*256);
+				var c = parseInt(Math.random()*256);
+				document.getElementById("box").style.backgroundColor = "rgb("+ a +","+ b +","+ c +")";
+				//document.getElementById("box").style.width = "200px";
+				document.getElementById("box").style["width"] = "200px";
+				document.getElementById("box").style.left = "200px";
+				//外部   获取
+				//window.getComputedStyle(document.getElementById("box"),null).backgroundColor = "rgb("+ a +","+ b +","+ c +")";
+				//内部   获取
+				//var a = document.getElementById("box").style.backgroundColor;
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="in" placeholder="请输入你的名字" onfocus="aaa()"/>
+		<p id="p1">1234</p>
+		<div id="box" style="width: 100px;height: 200px;background-color: red;position: absolute;">
+		<button onclick="changeColor()">换颜色</button>
+			
+		</div>
+	</body>
+</html>

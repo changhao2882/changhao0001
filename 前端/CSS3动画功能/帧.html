@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				width: 300px;
+				height: 100px;
+				text-align: center;
+				line-height: 100px;
+				background-color: aqua;
+				position: absolute;
+				
+				animation: mywidth 2s linear 0s infinite reverse;
+			}
+			@keyframes mycolor{
+				0%{
+					background-color: yellow;
+				}
+				25%{
+					background-color: blue;
+				}
+				50%{
+					background-color: #0000FF;
+				}
+				100%{
+					background-color: pink;
+				}
+			}
+			@keyframes mywidth{
+				from{
+					left: 0;
+				}
+				to{
+					left: 100px;
+				}
+			}
+			
+			div:hover{
+				/*执行哪个动画，执行几秒 规定速度效果的速度曲线，定义过滤效果何时开始 执行几次（可以为infinite） 动画执行方向*/
+				animation: mycolor 5s linear 0s 2 reverse;
+				
+			}
+		</style>
+	</head>
+	<body style="position: relative;">
+		
+		<button type="button" id="btn" onclick="func()">点击</button>
+		<div id="box">
+			gsgdrg 494 sgshs5gh h.
+		</div>
+		
+		<script type="text/javascript">
+			function func(){
+				document.getElementsByTagName("div")[0].style.height="300px";
+			}
+		</script>
+	</body>
+</html>

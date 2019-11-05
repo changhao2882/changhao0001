@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="box">
+			<p>aaaaaaa</p>
+			<p>bbbbbbb</p>
+			<p>aaaaaaa</p>
+			<p>bbbbbbb</p>
+			<p>aaaaaaa</p>
+			<p>bbbbbbb</p>
+		</div>
+		<button id="btn">按钮</button>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				// var a=$("#btn").bind("click",function(e,mg1,mg2){
+				// 	console.log("**********"+mg1+mg2)
+				// })
+				// a.trigger("click",["111","222"])
+				//triggerHandle()不会导致浏览器同名的默认行为被执行  trigger阻止就return false
+				//return false
+				
+				//模仿移入移除(不想移入或移出用null)
+				var a=$("#btn").hover(function(){
+					console.log("****移入******")
+				},function(){
+					console.log("****移出******")
+				})
+				
+				$("#btn").bind("click",function(e){
+					console.log(e)
+				})
+			})
+		</script>
+	</body>
+</html>

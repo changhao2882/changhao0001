@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			li{
+				list-style: none;
+			}
+			a{
+				color: #FFD700;
+				text-decoration: none;
+				font-size: 40px;
+			}
+			#menu>li,#menu>li>a,#menu>li>ul{
+				float:left;
+			}
+			#menu>li>a{
+				width: 25px;
+				height: 150px;
+				margin: 0 auto;
+				background-color: red;
+				line-height: 30px;
+				word-wrap: break-word;/*英文的时候需要加上这句，自动换行*/  
+			}
+			#menu ul{
+				display: none;
+				width: 100px;
+				height: 142px;
+				background-color: #00FFFF;
+				padding-top: 20px;
+				text-indent: 9px;
+			}
+			#menu ul li{
+				font-size: 16px;
+			}
+			#menu>li:hover ul{ /*放上去*/
+				display: block;
+			}
+			/* #menu>li{
+				background-image: url(img/background.png);
+				background-size: 100% 150px;
+				background-repeat:no-repeat;
+			} */
+		</style>
+	</head>
+	<body>
+		<ul id="menu">
+			<li>
+				<a href="#">good</a>
+				<ul>
+					<li>good1</li>
+					<li>good2</li>
+					<li>good3</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">nice</a>
+				<ul>
+					<li>nice1</li>
+					<li>nice2</li>
+					<li>nice3</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">handsome</a>
+				<ul>
+					<li>handsome1</li>
+					<li>handsome2</li>
+					<li>handsome3</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">cool</a>
+				<ul>
+					<li>cool1</li>
+					<li>cool2</li>
+					<li>cool3</li>
+				</ul>
+			</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<button type="button" id="button"></button>
+		<div id="box">
+			
+		</div>
+		<script type="text/javascript">
+			$("#button").bind("click",function(){
+				$.ajax({
+					type:"get",
+					url:"",
+					async:true,
+					data:{a:1,b:2},
+					dataType:"json",
+					success:function(data,textStatus){
+						//console.log(data)
+						//console.log(textStatus)成功状态
+						var d=data["CATALOG"]["CD"]
+						for(var i=0;i<d.length;i++){
+							var info=d[i]
+							var $p=$("<p>"+info["TITLE"]+"</p>")
+						}
+						$(#box).append($p)
+					}
+				});
+			})
+		</script>
+	</body>
+</html>

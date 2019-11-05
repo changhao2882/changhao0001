@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link  href="css/style.css" type="text/css" rel="stylesheet"/>
+		<style type="text/css">
+			/*
+			
+			属性                      描述
+			
+			list-style               简写属性。用于把所有用于列表的属性设置于一个声明中。 
+			list-style-image         将图象设置为列表项标志。 
+			list-style-position      设置列表中列表项标志的位置。 
+			list-style-type          设置列表项标志的类型。 
+
+			*/
+			.dh li{
+				display: inline-block;
+				background-color: #ff8888;
+				width: 100px;
+				height: 30px;
+				font-size: 10px;
+				text-align:center;/*设置文本居中*/
+				line-height: 30px;/*等于li的高度可以让字居中*/
+				list-style: none;
+			}
+			.dh a{
+				color:#FFFFFF;
+				text-decoration: none;/*去掉下划线*/
+			}
+			.tb td{
+				background-color: #ff8888;
+				width: 100px;
+				height: 35px;
+				font-size: 12px;
+				text-align:center;/*设置文本居中*/
+				line-height: 30px;/*等于li的高度可以让字居中*/
+			}
+			.tb a:link{	/*访问过后*/
+				color: red;
+			}
+			.tb a:visited{ /*初始*/
+				color: yellow;
+			}
+			.tb a:hover{ /*放上去*/
+				color: blue;
+				font-size: 15px;
+				text-decoration: underline; /*显示下划线*/
+			}
+			.tb a:active{	/*点*/
+				color: gold;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="dh">
+			<li><a href="#">导航1</a></li>
+			<li><a href="#">导航2</a></li>
+			<li><a href="#">导航3</a></li>
+			<li><a href="#">导航4</a></li>
+			<li><a href="#">导航5</a></li>
+			<li><a href="#">导航6</a></li>
+			<li><a href="#">导航7</a></li>
+			<li><a href="#">导航8</a></li>
+		</ul>
+		<table class="tb dh" cellpadding="0" cellspacing="0">
+			<tr>
+				<td><a href="#">导航1</a></td>
+				<td><a href="#">导航2</a></td>
+				<td><a href="#">导航3</a></td>
+				<td><a href="#">导航4</a></td>
+				<td><a href="#">导航5</a></td>
+				<td><a href="#">导航6</a></td>
+				<td><a href="#">导航7</a></td>
+				<td><a href="#">导航8</a></td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			li{
+				list-style: none;
+				font-size: 24px;
+			}
+			li a{
+				color: #FFD700;
+				text-decoration: none;
+			}
+			#menu{
+				width: 200px;
+				margin: 50px;
+			}
+			#menu>li{
+				background-image: url(img/background.png);
+				background-size: 100% 30px;
+				background-repeat:no-repeat;
+				line-height: 30px;
+				text-indent: 60px;
+			}
+			#menu ul{
+				display: none;
+			}
+			#menu ul li{
+				text-indent: 30px;
+				font-size: 16px;
+			}
+			#menu>li:hover ul{ /*放上去*/
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="menu">
+			<li>
+				<a href="#">good</a>
+				<ul>
+					<li>good1</li>
+					<li>good2</li>
+					<li>good3</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">nice</a>
+				<ul>
+					<li>nice1</li>
+					<li>nice2</li>
+					<li>nice3</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">handsome</a>
+				<ul>
+					<li>handsome1</li>
+					<li>handsome2</li>
+					<li>handsome3</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">cool</a>
+				<ul>
+					<li>cool1</li>
+					<li>cool2</li>
+					<li>cool3</li>
+				</ul>
+			</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<input type="text" name="" id="" value="" list="list" placeholder="请选择"/>
+		<datalist id="list">
+			<option value ="good1"></option>
+			<option value ="good2"></option>
+			<option value ="good3"></option>
+		</datalist>
+		<p>1111111<mark>123</mark>1111111111</p>
+		<details>
+			<summary>88888</summary>
+			<p>5555555555555555555</p>
+		</details>
+		<progress max="100" value="20" id="pro"></progress>
+		<form action="" id="aa">
+			<input type="range" name="" id="" max="100" min="0" value="28" step="20"/>
+			<input type="date" name="" id="" value="" />
+			<input type="week" name="" id="" value="" />
+			<input type="month" name="" id="" value="" />
+			<input type="datetime-local" name="" id="" value="" />
+			<input type="time" name="" id="" value="" />
+			<input type="search" name="" id="" value=""  placeholder="搜索"/>
+			<input type="color" name="" id="" value="" />
+			<input type="email" name="" id="" value=""  placeholder="邮箱"/>
+			<input type="url" name="" id="" value=""  placeholder="路径"/>
+			<input type="tel" name="" id="" value=""  placeholder="电话号码"/>
+			<input type="text" name="" id="" value="" autocomplete="on"  placeholder="自动补全"/>
+			<input type="text" name="" id="" value="" autofocus="autofocus"  placeholder="自动聚焦"/>
+			<input type="text" name="" id="" value=""  placeholder="不写不能提交" required="required"/>
+			<input type="text" name="" id="" value="" pattern="\d+"  placeholder="正则"/>
+			<input type="text" name="" id="" value="111" disabled="disabled"/>
+			<input type="text" name="" id="" value="只读" readonly="readonly"/>
+		</form>
+		<input type="text" name="" id="" value="" form="aa"/>
+		<script type="text/javascript">
+			var num=0
+			setInterval(function(){
+				$("#pro").val(num+"")
+				num++
+			},100)
+		</script>
+	</body>
+</html>

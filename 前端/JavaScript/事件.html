@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<input type="text" name="" id="in" value="" />
+		<script type="text/javascript">
+			var inp=document.getElementById("in");
+			
+			inp.addEventListener("focus",function(){
+				alert("聚焦事件")
+			},false);
+			
+			inp.addEventListener("blur",function(){
+				alert("离焦事件")
+			},false);
+		</script>
+		
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			p:before{
+				content:"*";
+			}
+			p:after{
+				content: "!";
+				color: red;
+			}
+			
+			/* 根元素 */
+			:root{
+				background-color: #FF0000;
+			}
+			
+			p:not(.item2){
+				background-color: #00FFFF;
+			}
+			
+			div:target{
+				background-color: antiquewhite;
+			}
+			
+			/* 父类元素下第一个子元素 */
+			#box1 p:first-child{
+				background-color: aquamarine;
+			}
+			/* 父类元素下最后一个子元素 */
+			#box1 p:last-child{
+				background-color: aquamarine;
+			}
+			/* 父类元素下正数第3个子元素 */
+			#box1 p:nth-child(3){
+				background-color: aquamarine;
+			}
+			/* 父类元素下倒数第2个子元素 */
+			#box1 p:nth-last-child(2){
+				background-color: aquamarine;
+			}
+			/* 聚焦变色 */
+			#box3 input:focus{
+				background-color: blueviolet;
+			}
+			/* 禁用下 enable是可用状态下 */
+			#box3 input:disabled{
+				background-color: yellow;
+			}
+			#box3 input:checked+label{
+				background-color: yellow;
+			}
+			/* class=item1后所有  +是一个 */
+			.item1~p{
+				background-color: #8A2BE2;
+			}
+		</style>
+	</head>
+	<body>
+		<box id="box3">
+			<input type="text" name="" id="" value="" />
+			<input type="text" name="" id="" value="" disabled="disabled"/>
+			<input type="checkbox" checked="checked" name="" id="aa" value="" />
+			<label for="aa">safsfsg</label>
+		</box>
+		<p>
+			<a href="#item1">item1</a>
+			<a href="#item2">item2</a>
+			<a href="#item3">item3</a>
+		</p>
+		<p class="item1">11111111111</p>
+		<p class="item2">222222222222</p>
+		<p class="item3">33333333333</p>
+		<div id="item1">item1</div>
+		<div id="item2">item2</div>
+		<div id="item3">item3</div>
+		<div id="box1">
+			<p class=""it1></p>
+			<p class=""it2></p>
+			<p class=""it3></p>
+			<p class=""it4></p>
+			<p class=""it5></p>
+			<p class=""it6></p>
+		</div>
+		<div id="box2">
+			<p class=""it1></p>
+			<p class=""it2></p>
+			<p class=""it3></p>
+			<p class=""it4></p>
+			<p class=""it5></p>
+			<p class=""it6></p>
+		</div>
+	</body>
+</html>
