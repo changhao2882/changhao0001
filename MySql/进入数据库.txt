@@ -1,0 +1,3 @@
+管理员net start mysql57
+正常mysql -u root -p
+远程mysql -h主机名 -P端口号 -u用户名 -p密码
