@@ -89,7 +89,7 @@ ALTER TABLE book CHANGE COLUMN publishdate pubDate DATETIME;
 #②修改列的类型或约束
 ALTER TABLE book MODIFY COLUMN pubdate TIMESTAMP;
 
-#③添加新列
+#③添加新列 first|after 字段名  (添加到指定位置)
 ALTER TABLE author ADD COLUMN annual DOUBLE; 
 
 #④删除列
