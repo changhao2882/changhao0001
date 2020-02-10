@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 实验13：基于XML的自动装配（自定义类型自动赋值）
+		JavaBean（基本类型）
+				（自定义类型的属性是一个对象，这个对象在容器中可能存在） -->
+	<bean class="com.atguigu.bean.Car" id="car">
+		<property name="carName" value="宝马"></property>
+		<property name="color" value="白色"></property>
+	</bean>
+	<!-- <bean class="com.atguigu.bean.Car" id="car02">
+		<property name="carName" value="奔驰"></property>
+		<property name="color" value="白色"></property>
+	</bean> -->
+	
+	<!-- 为person里面的自定义类型的属性赋值
+		property：手动赋值
+		自动赋值（自动装配）：仅限于对自定义类型的属性有效
+		default/no:不自动装配；不自动为car属性赋值
+		
+		//按照某种规则自动装配
+		byName:按照名字
+				private Car car;以属性名（car）作为id去容器中找到这个组件，给他赋值，如果找不到就装配null
+				car = ioc.getBean("car");
+		byType:
+				private Car car;
+				1）以属性的类型作为查找依据去容器中找到这个组，如果容器中有多个这个类型的组件，报错。
+				No qualifying bean of type [com.atguigu.bean.Car] is defined: 
+				expected single matching bean but found 2: car01,car02
+				2）没找到？装配null
+				car = ioc.getBean(Car.class);
+		constructor:
+				pubilc Person(Car car)
+				按照构造器进行赋值
+				1)先按照有参构造器参数的类型进行装配；没有就直接为组件装配null即可。
+				2）如果按照类型找到了多个；参数的名作为id继续匹配；找不到匹配，找不到就null
+				3）不会报错；
+	 -->
+	<bean class="com.atguigu.bean.Person" id="person" autowire="byType"></bean>
+	
+	<!-- List<Book> books; 容器可以把容器中的所有book封装list赋值给这个属性 -->
+	<bean class="com.atguigu.bean.Book" id="book01">
+		<property name="bookName" value="book1"></property>
+	</bean>
+	<bean class="com.atguigu.bean.Book" id="book02">
+		<property name="bookName" value="book2"></property>
+	</bean>
+	<bean class="com.atguigu.bean.Book" id="book03">
+		<property name="bookName" value="book3"></property>
+	</bean>
+	
+	<!-- 实验14：[SpEL测试I]（Spring Expression Language）Spring的表达式语言
+			SpEL使用#{…}作为定界符，所有在大框号中的字符都将被认为是SpEL表达式。
+			    在SpEL中使用字面量、
+			    ●整数：<property name="count" value="#{5}"/>
+				●小数：<property name="frequency" value="#{89.7}"/>
+				●科学计数法：<property name="capacity" value="#{1e4}"/>
+				●String类型的字面量可以使用单引号或者双引号作为字符串的定界符号
+				<property name=“name” value="#{'Chuck'}"/>
+				<property name='name' value='#{"Chuck"}'/>
+				●Boolean：<property name="enabled" value="#{false}"/>
+			    引用其他bean、
+			    引用其他bean的某个属性值、
+			    调用非静态方法
+			    调用静态方法、
+			    使用运算符
+			    6.8	运算符
+					①算术运算符：+、-、*、/、%、^
+					②字符串连接：+
+					③比较运算符：<、>、==、<=、>=、lt、gt、eq、le、ge
+					④逻辑运算符：and, or, not, |
+					⑤三目运算符：判断条件?判断结果为true时的取值:判断结果为false时的取值
+					⑥正则表达式：matches
+     -->
+	<bean class="com.atguigu.bean.Person" id="person01">
+		<!-- 字面量 -->
+		<property name="salary" value="#{12345.67*12}"></property>
+		<!--  引用其他bean的某个属性值 -->
+		<property name="lastName" value="#{book01.bookName}"></property>
+		<!-- 引用其他bean -->
+		<property name="car" value="#{car}"></property>
+		<!-- 调用静态方法:UUID.randomUUID().toString(); 
+			在SpEL表达式中调用类的静态方法:#{T(全类名).静态方法(1,2)}
+			<property name="circle" value="#{T(java.lang.Math).PI*20}"/>
+		-->
+		<property name="email" value="#{T(java.util.UUID).randomUUID().toString().substring(0,5)}"></property>
+		<!-- 调用非静态方法; 对象.方法名(1,2) -->
+		<property name="gender" value="#{book01.getBookName()}"></property>
+	</bean>
+	
+	
+	
+</beans>

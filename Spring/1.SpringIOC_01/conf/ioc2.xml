@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+	<!-- 
+		实验4：正确的为各种属性赋值
+			    测试使用null值 、
+			    引用类型赋值（引用其他bean、引用内部bean）
+			    集合类型赋值（List、Map、Properties）、
+			    util名称空间创建集合类型的bean
+			    级联属性赋值
+	 -->
+	<bean class="com.atguigu.bean.Person" id="person01">
+		<!-- lastName=null -->
+		<property name="lastName">
+			<!-- 进行复杂的赋值 -->
+			<null></null>
+		</property>
+		
+		<!-- ref:代表引用外部的一个值;car = ioc.getBean("car01");引用其他bean -->
+		<!-- <property name="car" ref="car01"></property> -->
+		
+		<property name="car" >
+			<!-- 对象我们可以使用bean标签创建 ;car = new Car();引用内部bean; 不能被获取到，只能内部使用-->
+			<bean class="com.atguigu.bean.Car" id="carInner">
+				<property name="carName" value="自行车"></property>
+				<property name="price" value="88888"></property>
+				<property name="color" value="red"></property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean class="com.atguigu.bean.Person" id="person02">
+		<!-- 如何为list属性赋值 -->
+		<property name="books">
+			<!-- books = new ArrayList<Book>(); -->
+			<list>
+				<!-- list标签体中添加每一个元素 -->
+				<bean class="com.atguigu.bean.Book" p:bookName="西游记"></bean>
+				<!-- 引用外部一个元素 -->
+				<ref bean="book01"/>
+			</list>
+		</property>
+		
+		<!-- 如何为map属性赋值 -->
+		<property name="maps">
+			<!-- maps = new LinkedHashMap<>(); -->
+			<map>
+				<!-- 一个entry代表一个键值对 -->
+				<entry key="key01" value="张三"></entry>
+				<entry key="key02" value="李四"></entry>
+				<entry key="key03" value-ref="book01"></entry>
+				<entry key="key04">
+					<bean class="com.atguigu.bean.Car">
+						<property name="carName" value="玛莎拉蒂"></property>
+				    </bean>
+				</entry>
+				<entry key="key05">
+					<value>王五</value>
+				</entry>
+				<!-- <entry key="05">
+					<map></map>
+				</entry> -->
+			</map>
+		</property>
+		
+		<!-- 如何为Properties属性赋值 -->
+		<property name="properties">
+			<!-- properties = new Properties(); 所有的key-value都是String类型的 -->
+			<props>
+				<!-- key-value都是String类型的,值直接写在标签体中 -->
+				<prop key="username">root</prop>
+				<prop key="password">123456</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- util名称空间创建集合类型的bean,方便别人引用 -->
+	<bean class="com.atguigu.bean.Person" id="person03">
+		<property name="maps" ref="myMap"></property>
+	</bean>
+	
+	<!-- 先当于new LinkedHashMap<>(); -->
+	<util:map id="myMap">
+		<!-- 添加元素；一个entry代表一个键值对 -->
+		<entry key="key01" value="张三"></entry>
+		<entry key="key02" value="李四"></entry>
+		<entry key="key03" value-ref="book01"></entry>
+		<entry key="key04">
+			<bean class="com.atguigu.bean.Car">
+				<property name="carName" value="玛莎拉蒂"></property>
+			</bean>
+		</entry>
+		<entry key="key05">
+			<value>王五</value>
+		</entry>
+	</util:map>
+	
+	<!-- 解释：4个元素
+		[[],Person,123,{}]
+	 -->
+	<util:list id="myList">
+		<list></list>
+		<bean class="com.atguigu.bean.Person"></bean>
+		<value>123</value>
+		<ref bean="myMap"/>
+	</util:list>
+	
+	<!-- 级联属性赋值：级联属性：属性的属性 -->
+	<bean class="com.atguigu.bean.Person" id="person04">
+		<!-- 为car赋值的时候，改变car的价格 -->
+		<property name="car" ref="car01"></property>
+		<!-- 级联属性可以修改属性的属性；注意：原来的bean的值可能会被修改 -->
+		<property name="car.price" value="9999999"></property>
+	</bean>
+	
+	<bean class="com.atguigu.bean.Book" id="book01">
+		<property name="bookName" value="东游记"></property>
+	</bean>
+	
+	<bean class="com.atguigu.bean.Car" id="car01">
+		<property name="carName" value="法拉利"></property>
+		<property name="price" value="88888"></property>
+		<property name="color" value="red"></property>
+	</bean>
+	
+	<!-- 实验6：通过继承实现bean配置信息的重用
+	实验7：通过abstract属性创建一个模板bean
+	-->
+	
+	<!-- abstract="true",这个bean的配置是一个抽象的，不能获取他的实例，只能被别人用来继承 -->
+	<bean class="com.atguigu.bean.Person" id="person05" abstract="true">
+		<property name="lastName" value="张三"></property>
+		<property name="age" value="18"></property>
+		<property name="email" value="zhangsan@atguigu.com"></property>
+		<property name="gender" value="男"></property>
+	</bean>
+	
+	<!-- parent：指定当前bean的配置信息继承于哪个 -->
+	<bean class="com.atguigu.bean.Person" id="person06" parent="person05">
+		<property name="lastName" value="张三sanaaa"></property>
+	</bean>
+	
+</beans>
