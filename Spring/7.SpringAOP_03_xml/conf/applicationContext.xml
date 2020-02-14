@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+	
+	<!-- 开启基于配置的AOP功能;-->
+	<bean class="com.atguigu.impl.MyMathCalculator" id="myMathCalculator"></bean>
+	<bean class="com.atguigu.utils.LogUtils" id="logUtils"></bean>
+	<bean class="com.atguigu.utils.ValidateAspect" id="validateAspect"></bean>
+	
+	<!-- 需要aop名称空间  -->
+	<aop:config>
+		<!-- 公共的切入点表达式 -->
+		<aop:pointcut expression="execution(* com.atguigu.impl.*.*(..))" id="globalPoint"/>
+		<!-- 指定切面@Ascept -->
+		<aop:aspect ref="logUtils" order="2">
+			<aop:pointcut expression="execution(* com.atguigu.impl.*.*(..))" id="myPoint"/>
+			<aop:before method="logStart" pointcut="execution(* com.atguigu.impl.*.*(..))"/>
+			<aop:after-returning method="logReturn" pointcut-ref="myPoint" returning="result"/>
+			<aop:after-throwing method="logException" pointcut-ref="myPoint" throwing="e"/>
+			<aop:after method="logEnd" pointcut-ref="myPoint"/>
+			<aop:around method="myAround" pointcut-ref="myPoint"/>
+		</aop:aspect>
+		
+		<aop:aspect ref="validateAspect" order="1">
+			<aop:before method="logStart" pointcut-ref="globalPoint"/>
+			<aop:after-returning method="logReturn" pointcut-ref="globalPoint" returning="result"/>
+			<aop:after-throwing method="logException" pointcut-ref="globalPoint" throwing="e"/>
+			<aop:after method="logEnd" pointcut-ref="globalPoint"/>
+		</aop:aspect>
+	</aop:config>
+	
+	<!-- 注解：快速方便
+		配置：功能完善；
+		重要的用配置，不重要的用注解
+	 -->
+</beans>

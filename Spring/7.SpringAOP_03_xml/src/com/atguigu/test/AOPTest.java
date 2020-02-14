@@ -1,0 +1,51 @@
+package com.atguigu.test;
+
+import static org.junit.Assert.*;
+
+import java.math.BigInteger;
+import java.util.Arrays;
+
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.atguigu.impl.MyMathCalculator;
+import com.atguigu.inter.Calculator;
+
+public class AOPTest {
+	
+	ApplicationContext ioc = new ClassPathXmlApplicationContext("applicationContext.xml");
+	
+	@Test
+	public void test(){
+		MyMathCalculator bean = (MyMathCalculator) ioc.getBean("myMathCalculator");
+		bean.add(2, 1);
+		System.out.println("===========");
+		bean.div(2, 0);
+		
+		/**
+		 * 运行顺序：
+		 * 	【ValidateAspect】【add】方法开始执行，用的参数列表[2, 1]
+			【LogUtils】【add】方法开始执行，用的参数列表[2, 1]
+			【环绕前置通知】【add】方法开始，传入的参数为：[2, 1]
+			方法内部执行...
+			【环绕返回通知】【add】方法开始，结果为：3
+			【环绕后置通知】【add】方法结束
+			【LogUtils】【add】方法最终结束了
+			【LogUtils】【add】方法执行完毕，计算结果是：3
+			【ValidateAspect】【add】方法最终结束了
+			【ValidateAspect】【add】方法执行完毕，计算结果是：3
+			===========
+			【ValidateAspect】【div】方法开始执行，用的参数列表[2, 0]
+			【LogUtils】【div】方法开始执行，用的参数列表[2, 0]
+			【环绕前置通知】【div】方法开始，传入的参数为：[2, 0]
+			【环绕异常通知】【div】方法开始，异常信息为：java.lang.ArithmeticException: / by zero
+			【环绕后置通知】【div】方法结束
+			【LogUtils】【div】方法最终结束了
+			【LogUtils】【div】方法出现异常了，异常信息是：java.lang.RuntimeException: java.lang.ArithmeticException: / by zero
+			【ValidateAspect】【div】方法最终结束了
+			【ValidateAspect】【div】方法出现异常了，异常信息是：java.lang.RuntimeException: java.lang.ArithmeticException: / by zero
+		 */
+	}
+
+}

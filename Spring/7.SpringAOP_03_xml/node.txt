@@ -1,0 +1,14 @@
+核心容器：
+spring-beans-4.0.0.RELEASE.jar
+spring-context-4.0.0.RELEASE.jar
+spring-core-4.0.0.RELEASE.jar
+spring-expression-4.0.0.RELEASE.jar
+Spring运行的时候依赖日志包；没有就报错;
+commons-logging-1.1.3.jar
+
+
+spring-aspects-4.0.0.RELEASE.jar（基础）
+//加强版的面向切面编程（即使目标对象没有实现任何接口也能创建动态代理）
+com.springsource.net.sf.cglib-2.2.0.jar
+com.springsource.org.aopalliance-1.0.0.jar
+com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar
