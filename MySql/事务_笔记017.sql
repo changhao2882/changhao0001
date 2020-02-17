@@ -1,4 +1,4 @@
-#TCL   set names gbk;  修改字符集
+﻿#TCL   set names gbk;  修改字符集
 /*
 Transaction Control Language 事务控制语言
 
@@ -54,10 +54,10 @@ savepoint 节点名;设置保存点
  数据库规定了多种事务隔 离级别, 不同隔离级别对应不同的干扰程度, 隔离级别越高, 数据一致性就 越好, 但并发性越弱.
 事务的隔离级别：
 		  脏读		不可重复读	幻读
-read uncommitted：√		√		√
-read committed：  ×		√		√
-repeatable read： ×		×		√
-serializable	  ×             ×               ×
+（读未提交）read uncommitted：√		√		√
+（读已提交）read committed：  ×		√		√
+（可重复读）repeatable read： ×		×		√
+（串行化）serializable	  ×             ×               ×
 
 
 mysql中默认 第三个隔离级别 repeatable read
