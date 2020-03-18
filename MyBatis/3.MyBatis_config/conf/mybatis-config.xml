@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+  <!-- 1.引入外部配置文件
+  	resource:从类路径下开始引用
+  	url：引用磁盘路径或者网络路径的资源
+   -->
+  <properties resource="dbconfig.properties"></properties>
+  
+  <!-- 2.这是 MyBatis 中极为重要的调整设置，它们会改变 MyBatis 的运行时行为。 -->
+  <settings>
+    <!-- name:配置项的key；value:配置项的值 
+    	loginAccount  login_Account
+    -->
+  	<setting name="mapUnderscoreToCamelCase" value="true"/>
+  </settings>
+  
+  <!-- 3.类型别名；为常用的类型起别名； -->
+  <typeAliases>
+    <!-- typeAlias：就是为一个JavaBean起别名；别名默认就是类名（不区分大小写），配置文件在就可以用别名了
+    	alias:指定一个别名
+     -->
+  	<!-- <typeAlias type="com.atguigu.bean.Employee" alias="emp"/> -->
+  	
+  	<!-- 批量起别名   name:指定包名，默认别名就是类名
+  			@Alias("emp"):指定别名（加类上）
+  	-->
+  	<package name="com.atguigu.bean"/>
+  </typeAliases>
+  
+  <!-- 4.类型处理器 -->
+  <!-- 5.插件是MyBatis中的一个强大功能 -->
+  
+  <!-- 6.environments配置环境们
+  		environment：配置一个具体的环境（能多个）。都需要一个事务管理器，一个数据源
+  		后来数据源和事务管理器都是Spring来做
+   -->
+  <!-- default="development"：默认使用哪个环境 -->
+  <environments default="development">
+  	<!-- 唯一标识 -->
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <!-- 配置连接池 -->
+      <dataSource type="POOLED">
+        <property name="driver" value="${jdbc.driverClass}"/>
+        <property name="url" value="${jdbc.jdbcUrl}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+      </dataSource>
+    </environment>
+  </environments>
+  
+  <!-- 6.MyBatis用来考虑数据库移植性的 -->
+  <databaseIdProvider type="DB_VENDOR">
+  	<!-- name:厂商标识 value：给这个标识起别名   MySQL  Oracle   SQL Server -->
+  	<property name="MySQL" value="mysql"/>
+  	<property name="Oracle" value="orcl"/>
+  	<property name="SQL Server" value="sqlserver"/>
+  </databaseIdProvider>
+  
+  <!-- 引入我们自己编写的每一个接口的实现文件 -->
+  <mappers>
+    <!-- resource：表示从类路径下找资源
+         url:引用磁盘路径或者网络路径的资源
+         class:直接用接口的全类名；
+         	可以将xml文件放在和dao接口相同的目录下，而且文件名和接口名一致
+     -->
+     <!-- 重要的写配置单的dao就直接标注解 -->
+    <!-- <mapper resource="mybatis/EmployeeDao.xml"/> -->
+    <!-- <mapper class="com.atguigu.dao.EmployeeDao"/> -->
+    <!-- <mapper class="com.atguigu.dao.EmployeeDaoAnnotation"/> -->
+    <!-- 批量注册（将xml文件放在和dao接口相同的目录下，而且文件名和接口名一致） name：dao所在接口的包名 -->
+    <package name="com.atguigu.dao"/>
+  </mappers>
+</configuration>
