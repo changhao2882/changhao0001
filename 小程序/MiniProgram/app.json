@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/home01/home01",
+    "pages/about/about",
+    "pages/profile/profile",
+    "pages/category/category"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ff5777",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "昊哥的暴躁小程序",
+    "backgroundColor": "green",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "selectedColor": "#ff5777",
+    "backgroundColor": "#618759",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "你他妈点呀！",
+        "iconPath": "assets/tabbar/01.png",
+        "selectedIconPath": "assets/tabbar/02.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "点他妈试试!",
+        "iconPath": "assets/tabbar/03.png",
+        "selectedIconPath": "assets/tabbar/04.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "使劲他妈点!",
+        "iconPath": "assets/tabbar/05.png",
+        "selectedIconPath": "assets/tabbar/06.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap13.json"
+}

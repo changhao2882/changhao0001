@@ -1,0 +1,48 @@
+<!--pages/home01/home01.wxml-->
+<view class="title" class="title">hello, 你常昊爸爸等你好久了</view>
+<button size="mini">按钮</button>
+
+<button size="mini" open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">获取用户信息</button>
+
+<!-- 仅仅展示用户信息 -->
+<open-data type="userNickName"></open-data>
+<open-data type="userAvatarUrl"></open-data>
+
+<view bindtap="handleViewClick">{{name}}--{{age}}</view>
+
+<view wx:for="{{list}}">{{item.title}}</view>
+
+<view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+  <view>---</view>
+</view>
