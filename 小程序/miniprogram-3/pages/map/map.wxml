@@ -1,0 +1,2 @@
+<!--pages/map/map.wxml-->
+<map show-compass="{{true}}"></map>

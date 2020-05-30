@@ -1,0 +1,13 @@
+<!--pages/wxml/wxml.wxml-->
+<text>{{nowTime}}</text>
+<button bindtap="changeColor">修改颜色</button>
+<text class="{{isActive ? 'box': ''}}">哈哈哈</text>
+
+<!-- 分组，不渲染，只接受控制属性 -->
+<block class="{{isActive ? 'box': ''}}">
+  <text>{{nowTime}}\n</text>
+  <text>{{nowTime}}\n</text>
+  <text>{{nowTime}}\n</text>
+</block>
+<!-- wx:key;绑定id，diff算法可以正确识别此节点，找到正确的位置插入新的节点；为了高效的更新虚拟dom；数据不能重复 -->
+<text wx:key="key" wx:for="{{5}}" wx:for-item="number" wx:for-index="s">{{number}}--{{s}}\n</text>

@@ -1,0 +1,22 @@
+/* pages/scrollView/scrollView.wxss */
+.container1{
+  background-color: royalblue;
+  white-space: nowrap; /* 不换行 */
+}
+.item1{
+  background-color: salmon;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  display: inline-block; /* 行内块级元素 */
+}
+.container2{
+  background-color: sandybrown;
+  height: 300px;
+  margin-top: 20px;
+}
+.item2{
+  background-color: salmon;
+  height: 100px;
+  margin: 10px;
+}

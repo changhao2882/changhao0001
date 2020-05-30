@@ -1,0 +1,26 @@
+<!--pages/input/input.wxml-->
+<input></input>
+
+<!-- input监听事件 -->
+<input focus></input>
+
+<view>
+    <view>实时获取输入值：{{inputValue}}</view>
+    <view>
+      <input maxlength="10" bindinput="bindKeyInput" placeholder="输入同步到view中"/>
+    </view>
+</view>
+
+<view>
+    <view>获取焦点：{{inputValue}}</view>
+    <view>
+      <input maxlength="10" bindfocus="bindKeyInput1" placeholder="获取焦点"/>
+    </view>
+</view>
+
+<view>
+    <view>失去焦点：{{inputValue}}</view>
+    <view>
+      <input maxlength="10" bindblur="bindKeyInput2" placeholder="失去焦点"/>
+    </view>
+</view>

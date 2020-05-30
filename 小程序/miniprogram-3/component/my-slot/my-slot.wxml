@@ -1,0 +1,9 @@
+<!--component/my-slot/my-slot.wxml-->
+<view>
+  <text>头</text>
+  <slot name="s1"/>
+  <slot name="s2"/>
+  <slot name="s3"/>
+  <text>尾</text>
+</view>
+

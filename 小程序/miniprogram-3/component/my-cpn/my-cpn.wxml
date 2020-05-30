@@ -1,0 +1,4 @@
+<!--component/my-cpn/my-cpn.wxml-->
+<text>title</text>
+<text>123</text>
+<cpn1/>

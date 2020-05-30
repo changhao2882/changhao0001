@@ -1,0 +1,42 @@
+<!--pages/wxs/wxs.wxml-->
+<my-slot>
+  <text slot="s3">3</text>
+  <slider value="{{slidervalue}}" slot="s2"></slider>
+  <text slot="s1">1</text>
+</my-slot>
+<view>-----------</view>
+<my-select class="my-select" id="my-select"/>
+<button size="mini" bind:tap="add">+1</button>
+
+<w-tab-control titles="{{titles}}" bind:increment="clickIncrement"/>
+
+<wxs src="../../wxs/info.wxs" module="info"/>
+
+<view>{{info.num1}}</view>
+<view>{{info.num2}}</view>
+<view>{{info.sum(3)}}</view>
+
+<view>{{info.priceFormat(price,4)}}</view>
+<view>{{info.time(timestamp,"yyyy-MM-dd")}}</view>
+
+<view class="fff">
+  <block wx:for="{{color}}" wx:key="*this">
+    <view class="item fontColor" bindtap="click" data-item="{{item}}" data-index="{{index}}">{{item}}</view>
+  </block>
+</view>
+
+<!-- 事件冒泡和事件捕获 -->
+<!-- bind:一层一层传递；catch：阻止事件进一步传递 -->
+<view class="view1" capture-bind:tap="c1" bindtap="t1">
+  <view class="view2" capture-bind:tap="c2" catchtap="t2">
+    <view class="view3" capture-bind:tap="c3" bindtap="t3"></view>
+  </view>
+</view>
+<my-cpn/>
+<view>\n</view>
+<my-prop title="哈哈哈" titleclass="red"/>
+<my-prop title="好好好" titleclass="green"/>
+<my-prop/>
+<view>\n</view>
+<view>当前计数:{{counter}}</view>
+<my-event bind:increment="handleIncrement"/>

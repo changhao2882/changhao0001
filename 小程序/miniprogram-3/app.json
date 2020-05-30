@@ -1,0 +1,16 @@
+{
+  "pages":[
+    "pages/wxs/wxs",
+    "pages/map/map",
+    "pages/wxml/wxml",
+    "pages/home/home"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

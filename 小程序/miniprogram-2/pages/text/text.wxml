@@ -1,0 +1,11 @@
+<!--pages/text/text.wxml-->
+<!-- 1、基本使用 -->
+<text>hello, world\n</text>
+<text>小 程序\n</text>
+
+<!-- 2、https://developers.weixin.qq.com/miniprogram/dev/component/text.html -->
+<text selectable="{{true}}" space="emsp" decode="{{false}}">小   程序&nbsp; &lt; &gt; &amp; &apos; &ensp; &emsp;\n</text>
+<text>小 程序\n</text>
+<text space="ensp">小 程序 中文字符空格一半大小\n</text>
+<text space="emsp">小 程序 中文字符空格大小\n</text>
+<text space="nbsp">小 程序 根据字体设置的空格大小\n</text>

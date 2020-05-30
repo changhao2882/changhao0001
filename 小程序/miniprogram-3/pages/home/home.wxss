@@ -1,0 +1,6 @@
+/* pages/home01/home01.wxss */
+@import './style/widget/weui-searchbar/weui-searchbar.wxss';
+.title{
+  color: red;
+  font-size: 20px;
+}

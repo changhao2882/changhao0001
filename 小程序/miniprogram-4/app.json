@@ -1,0 +1,35 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/detail/detail",
+    "pages/about/about",
+    "pages/comment/comment"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "selectedColor": "#ff5777",
+    "backgroundColor": "#618759",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "你他妈点呀！",
+        "iconPath": "assets/tabbar/01.png",
+        "selectedIconPath": "assets/tabbar/02.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "点他妈试试!",
+        "iconPath": "assets/tabbar/03.png",
+        "selectedIconPath": "assets/tabbar/04.png"
+      }
+    ]
+  }
+}

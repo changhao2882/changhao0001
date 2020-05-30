@@ -1,0 +1,4 @@
+/* pages/wxml/wxml.wxss */
+.box{
+  color: red;
+}

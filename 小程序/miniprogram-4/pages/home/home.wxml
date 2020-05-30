@@ -1,0 +1,21 @@
+<!--pages/home01/home01.wxml-->
+<view class="title" class="title">hello, 你常昊爸爸等你好久了</view>
+<button size="mini">按钮</button>
+
+<button size="mini" bind:tap="handleShowToast">handleShowToast</button>
+<button size="mini" bind:tap="handleShowModal">handleShowModal</button>
+<button size="mini" bind:tap="handleShowLoading">handleShowLoading</button>
+<button size="mini" bind:tap="handleShowAction">handleShowAction</button>
+
+<button size="mini" open-type="share">分享</button>
+
+<!-- 页面跳转 redirect  -->
+<navigator url="/pages/detail/detail">跳到detail</navigator>
+<navigator url="/pages/detail/detail" open-type="redirect">跳到detail</navigator>
+<navigator url="/pages/about/about" open-type="switchTab">跳到about</navigator>
+<navigator url="/pages/detail/detail" open-type="reLaunch">reLaunch</navigator>
+
+<navigator url="/pages/detail/detail?name='aa'&age=18">跳到detail</navigator>
+<view>{{title}}</view>
+
+<button size="mini" bindtap="click">跳到detail</button>

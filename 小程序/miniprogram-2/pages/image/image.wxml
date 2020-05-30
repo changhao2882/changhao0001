@@ -1,0 +1,32 @@
+<!--pages/image/image.wxml-->
+<!-- image可以写成单标签，也可以修改成双标签 -->
+<view class="page">
+  <view class="page__hd">
+    <text class="page__title">image</text>
+    <text class="page__desc">图片</text>
+  </view>
+  <view class="page__bd">
+    <view class="section section_gap" wx:for="{{array}}" wx:for-item="item">
+      <view class="section__title">{{item.text}}</view>
+      <view class="section__ctn">
+        <image style="width: 200px; height: 200px; background-color: #eeeeee;" mode="{{item.mode}}" src="{{src}}"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<image src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"></image>
+
+<button bindtap="handleChooseAlbum">选择系统中图片</button>
+<image src="{{imagePath}}"></image>
+
+<view>+++++++++++++</view>
+<image mode="" src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"></image>
+
+<view>************</view>
+<image show-menu-by-longpress src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"></image>
+
+<view>-----------</view>
+<image wx:for="{{10}}" lazy-load="{{true}}" bindload="handleImageLoad" src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"></image>
+

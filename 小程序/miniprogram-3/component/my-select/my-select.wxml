@@ -1,0 +1,2 @@
+<!--component/my-select/my-select.wxml-->
+<view>组件内计数：{{counter}}</view>
